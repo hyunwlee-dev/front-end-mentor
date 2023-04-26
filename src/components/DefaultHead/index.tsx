@@ -26,7 +26,7 @@ const DefaultHead: React.FC<IProps> = ({ title, description, url, ogi }) => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogi} />
 
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     </>
   );
 };
