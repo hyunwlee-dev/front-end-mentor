@@ -1,3 +1,5 @@
+@import "@/styles/utils";
+
 html,
 body {
   padding: 0;
@@ -5,6 +7,33 @@ body {
   font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
+  font-size: 18px;
+  background: var(--theme-background-color);
+  transition: background 0.3s;
+}
+
+body {
+  position: relative;
+  background: royalblue;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: var(--theme-background-image) no-repeat;
+    background-size: cover;
+    content: "";
+
+    @include media(">desktop") {
+      background: var(--theme-background-color);
+      height: 300px;
+    }
+  }
+
+  > * {
+    position: relative;
+  }
 }
 
 a {
@@ -14,6 +43,7 @@ a {
 
 * {
   font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
