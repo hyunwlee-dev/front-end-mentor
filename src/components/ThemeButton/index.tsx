@@ -1,7 +1,9 @@
 import { Theme } from "@/types/theme";
 import styles from "./style.module.scss";
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, useEffect } from "react";
 import Image, { ImageProps } from "next/image";
+import Button from "../Button";
+import { useDispatch } from "react-redux";
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme: Theme;
@@ -14,8 +16,9 @@ const getAriaLabel = (theme: Theme) => {
 
 const ThemeButton: React.FC<IProps> = ({ theme, className, ...restProps }) => {
   const combineClassName = `${styles.themeButton} ${className}`;
+
   return (
-    <button
+    <Button
       className={combineClassName}
       aria-label={getAriaLabel(theme)}
       {...restProps}
@@ -36,7 +39,7 @@ const ThemeButton: React.FC<IProps> = ({ theme, className, ...restProps }) => {
           height={26}
         />
       )}
-    </button>
+    </Button>
   );
 };
 
