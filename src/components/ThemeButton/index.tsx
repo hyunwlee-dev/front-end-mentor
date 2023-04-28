@@ -13,7 +13,11 @@ const getAriaLabel = (theme: Theme) => {
   return "Light Theme";
 };
 
-const ThemeButton: React.FC<IProps> = ({ theme, className, ...restProps }) => {
+const ThemeButton: React.FC<IProps> = ({
+  theme,
+  className = "",
+  ...restProps
+}) => {
   const combineClassName = `${styles.themeButton} ${className}`;
 
   return (
@@ -40,10 +44,6 @@ const ThemeButton: React.FC<IProps> = ({ theme, className, ...restProps }) => {
       )}
     </Button>
   );
-};
-
-ThemeButton.defaultProps = {
-  className: "",
 };
 
 export default ThemeButton;
