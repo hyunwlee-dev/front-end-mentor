@@ -11,4 +11,8 @@ const Button: React.FC<IProps> = ({ className, children, ...restProps }) => {
   );
 };
 
+Button.defaultProps = {
+  className: "",
+};
+
 export default Button;

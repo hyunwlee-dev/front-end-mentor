@@ -1,9 +1,8 @@
 import { Theme } from "@/types/theme";
 import styles from "./style.module.scss";
-import { ButtonHTMLAttributes, useEffect } from "react";
-import Image, { ImageProps } from "next/image";
+import { ButtonHTMLAttributes } from "react";
+import Image from "next/image";
 import Button from "../Button";
-import { useDispatch } from "react-redux";
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme: Theme;
@@ -41,6 +40,10 @@ const ThemeButton: React.FC<IProps> = ({ theme, className, ...restProps }) => {
       )}
     </Button>
   );
+};
+
+ThemeButton.defaultProps = {
+  className: "",
 };
 
 export default ThemeButton;
