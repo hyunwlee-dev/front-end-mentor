@@ -5,6 +5,7 @@ import { RootState } from "@/store/store";
 import { initTheme, toggleTheme } from "@/store/slices/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import Logo from "@/components/Logo";
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
@@ -36,11 +37,8 @@ const Home: NextPage = () => {
   return (
     <>
       <main>
-        <ThemeButton
-          className=""
-          theme={theme}
-          onClick={() => dispatch(toggleTheme())}
-        />
+        <Logo />
+        <ThemeButton theme={theme} onClick={() => dispatch(toggleTheme())} />
       </main>
     </>
   );

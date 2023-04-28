@@ -1,4 +1,4 @@
-@import "~include-media/dist/include-media";
+@import "include-media/dist/include-media";
 
 $breakpoints: (
   mobile: 568px,
@@ -31,7 +31,7 @@ $breakpoints: (
   --theme-secondary-color: #5b5e7e;
   --theme-natural-color: #c8cbe7;
   --theme-background-color: #171823;
-  --theme-background-image: url("/image/bg-mobile-dark.jpg");
+  --theme-background-image: url("/images/bg-mobile-dark.jpg");
   --theme-input-text-color: var(--theme-natural-color);
   --theme-gradient-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   --highlight-color: #e3e4f1;
