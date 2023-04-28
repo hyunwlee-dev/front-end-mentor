@@ -21,6 +21,18 @@ const Home: NextPage = () => {
     if (theme === Theme.DARK) dispatch(initTheme(theme));
   }, []);
 
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+    if (!htmlElement) return;
+    if (theme === Theme.LIGHT) {
+      htmlElement.classList.add("light");
+      htmlElement.classList.remove("dark");
+    } else {
+      htmlElement.classList.add("dark");
+      htmlElement.classList.remove("light");
+    }
+  }, [theme]);
+
   return (
     <>
       <main>
