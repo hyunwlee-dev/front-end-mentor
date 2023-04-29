@@ -19,7 +19,7 @@ $breakpoints: (
   --theme-gradient-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   --theme-highlight-color: var(--theme-natural-color);
   --theme-box-color: var(--theme-white-color);
-
+  --theme-box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   @include media(">desktop") {
     --theme-background-image: url("/images/bg-desktop-light.jpg");
   }
@@ -38,7 +38,7 @@ $breakpoints: (
   --theme-gradient-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   --theme-highlight-color: #e3e4f1;
   --theme-box-color: #25273d;
-
+  --theme-box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
   @include media(">desktop") {
     --theme-background-image: url("/images/bg-desktop-dark.jpg");
   }

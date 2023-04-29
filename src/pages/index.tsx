@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Logo from "@/components/Logo";
 import CheckBoxButton from "@/components/CheckBoxButton";
+import Input from "@/components/Input";
+import Container from "@/components/Container";
+import styles from "./style.module.scss";
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
@@ -42,6 +45,9 @@ const Home: NextPage = () => {
         <ThemeButton theme={theme} onClick={() => dispatch(toggleTheme())} />
         <CheckBoxButton isChecked />
         <CheckBoxButton isChecked={false} />
+        <Container className={styles.inputWrapper}>
+          <Input className={`${styles.leftMargin} ${styles.inputInner}`} />
+        </Container>
       </main>
     </>
   );
