@@ -6,6 +6,7 @@ import { initTheme, toggleTheme } from "@/store/slices/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Logo from "@/components/Logo";
+import CheckBoxButton from "@/components/CheckBoxButton";
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,8 @@ const Home: NextPage = () => {
       <main>
         <Logo />
         <ThemeButton theme={theme} onClick={() => dispatch(toggleTheme())} />
+        <CheckBoxButton isChecked />
+        <CheckBoxButton isChecked={false} />
       </main>
     </>
   );

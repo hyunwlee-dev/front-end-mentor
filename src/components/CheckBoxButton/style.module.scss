@@ -1,0 +1,22 @@
+.checkBoxButton {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 1px solid var(--theme-light-gray-color);
+  border-radius: 50%;
+  cursor: pointer;
+  &.checked {
+    background: var(--theme-gradient-color);
+    border: 0;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("/icons/icon-check.svg") no-repeat center;
+    }
+  }
+}

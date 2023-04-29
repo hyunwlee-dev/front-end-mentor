@@ -1,18 +1,22 @@
-@import 'include-media/dist/include-media';
+@import "include-media/dist/include-media";
 
-$breakpoints: (mobile: 568px, tablet: 767px, desktop: 992px);
+$breakpoints: (
+  mobile: 568px,
+  tablet: 767px,
+  desktop: 992px,
+);
 
 .light {
-  --theme-white-color: #FFFFFF;
-  --theme-gray-color: #D1D2DA;
-  --theme-light-gray-color: #E3E4F1;
-  --theme-primary-color: #3A7CFD;
---theme-secondary-color: #9495A5;
-  --theme-natural-color: #494C6B;
-  --theme-background-color: #FAFAFA;
+  --theme-white-color: #ffffff;
+  --theme-gray-color: #d1d2da;
+  --theme-light-gray-color: #e3e4f1;
+  --theme-primary-color: #3a7cfd;
+  --theme-secondary-color: #9495a5;
+  --theme-natural-color: #494c6b;
+  --theme-background-color: #fafafa;
   --theme-background-image: url("/images/bg-mobile-light.jpg");
-  --theme-input-text-color: #393A4B;
-  --theme-gradient-color: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+  --theme-input-text-color: #393a4b;
+  --theme-gradient-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   --theme-highlight-color: var(--theme-natural-color);
   --theme-box-color: var(--theme-white-color);
 
@@ -22,18 +26,18 @@ $breakpoints: (mobile: 568px, tablet: 767px, desktop: 992px);
 }
 
 .dark {
-  --theme-white-color: #FFFFFF;
-  --theme-gray-color: #4D5067;
-  --theme-light-gray-color: #393A4B;
-  --theme-primary-color: #3A7CFD;
-  --theme-secondary-color: #5B5E7E;
-  --theme-natural-color: #C8CBE7;
+  --theme-white-color: #ffffff;
+  --theme-gray-color: #4d5067;
+  --theme-light-gray-color: #393a4b;
+  --theme-primary-color: #3a7cfd;
+  --theme-secondary-color: #5b5e7e;
+  --theme-natural-color: #c8cbe7;
   --theme-background-color: #171823;
   --theme-background-image: url("/images/bg-mobile-dark.jpg");
   --theme-input-text-color: var(--theme-natural-color);
-  --theme-gradient-color: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
-  --theme-highlight-color: #E3E4F1;
-  --theme-box-color: #25273D;
+  --theme-gradient-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  --theme-highlight-color: #e3e4f1;
+  --theme-box-color: #25273d;
 
   @include media(">desktop") {
     --theme-background-image: url("/images/bg-desktop-dark.jpg");
