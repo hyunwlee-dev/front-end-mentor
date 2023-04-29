@@ -2,12 +2,12 @@ import { HTMLAttributes } from "react";
 import styles from "./style.module.scss";
 
 interface IProps extends HTMLAttributes<HTMLElement> {
-  as: React.ElementType;
+  as?: React.ElementType;
 }
 
 const Container: React.FC<IProps> = ({
-  as: Component,
-  className,
+  as: Component = "div",
+  className = "",
   children,
   ...restProps
 }) => {
@@ -18,11 +18,6 @@ const Container: React.FC<IProps> = ({
       {children}
     </Component>
   );
-};
-
-Container.defaultProps = {
-  as: "div",
-  className: "",
 };
 
 export default Container;
