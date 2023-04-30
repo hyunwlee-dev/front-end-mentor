@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { Theme } from "@/types/theme";
+import Button from "@/components/Button";
 import styles from "./style.module.scss";
 import { ButtonHTMLAttributes } from "react";
-import Image from "next/image";
-import Button from "../Button";
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme: Theme;

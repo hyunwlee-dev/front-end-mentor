@@ -10,6 +10,7 @@ import CheckBoxButton from "@/components/CheckBoxButton";
 import Input from "@/components/Input";
 import Container from "@/components/Container";
 import styles from "./style.module.scss";
+import TodoItem from "@/components/TodoItem";
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
@@ -38,6 +39,11 @@ const Home: NextPage = () => {
     }
   }, [theme]);
 
+  let obj = {
+    id: 3,
+    completed: true,
+    text: "hi",
+  };
   return (
     <>
       <main>
@@ -48,6 +54,7 @@ const Home: NextPage = () => {
         <Container className={styles.inputWrapper}>
           <Input className={`${styles.leftMargin} ${styles.inputInner}`} />
         </Container>
+        <TodoItem todo={obj} handleCheck={() => {}} handleRemove={() => {}} />
       </main>
     </>
   );
