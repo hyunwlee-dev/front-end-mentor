@@ -1,3 +1,4 @@
+import styles from "./style.module.scss";
 import { ButtonHTMLAttributes } from "react";
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
@@ -6,8 +7,9 @@ const Button: React.FC<IProps> = ({
   children,
   ...restProps
 }) => {
+  const combineClassName = `${styles.button} ${className}`;
   return (
-    <button className={className} type="button" {...restProps}>
+    <button className={combineClassName} type="button" {...restProps}>
       {children}
     </button>
   );
