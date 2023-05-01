@@ -6,13 +6,13 @@ import RemoveButton from "@/components/RemoveButton";
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   todo: Todo;
-  handleCheck: (id: number) => void;
-  handleRemove: (id: number) => void;
+  onCheck: (id: number) => void;
+  onRemove: (id: number) => void;
 }
 const TodoItem: React.FC<IProps> = ({
   todo,
-  handleCheck,
-  handleRemove,
+  onCheck,
+  onRemove,
   className = "",
   ...restProps
 }) => {
@@ -26,9 +26,9 @@ const TodoItem: React.FC<IProps> = ({
   )} ${className}`;
   return (
     <Container className={combineClassName} {...restProps}>
-      <CheckBoxButton isChecked={completed} onClick={() => handleCheck(id)} />
+      <CheckBoxButton isChecked={completed} onClick={() => onCheck(id)} />
       <div className={styles.contents}>{text}</div>
-      <RemoveButton onClick={() => handleRemove(id)} />
+      <RemoveButton onClick={() => onRemove(id)} />
     </Container>
   );
 };

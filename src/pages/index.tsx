@@ -12,13 +12,15 @@ import Container from "@/components/Container";
 import styles from "./style.module.scss";
 import TodoItem from "@/components/TodoItem";
 import Header from "@/components/Header";
+import TodoList from "@/components/TodoList";
 
 const Home: NextPage = () => {
-  let obj = {
-    id: 3,
-    completed: true,
-    text: "hi",
-  };
+  let todos = [
+    { id: 1, completed: true, text: "one" },
+    { id: 2, completed: false, text: "two" },
+    { id: 3, completed: true, text: "three" },
+    { id: 4, completed: false, text: "four" },
+  ];
   return (
     <>
       <main>
@@ -26,7 +28,14 @@ const Home: NextPage = () => {
         <Container className={styles.inputWrapper}>
           <Input className={`${styles.leftMargin} ${styles.inputInner}`} />
         </Container>
-        <TodoItem todo={obj} handleCheck={() => {}} handleRemove={() => {}} />
+        <TodoList
+          todos={todos}
+          onRemove={() => {}}
+          onCheck={() => {}}
+          onClear={() => {}}
+          onCompleted={() => {}}
+          onReorder={() => {}}
+        />
       </main>
     </>
   );
