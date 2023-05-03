@@ -1,28 +1,24 @@
+import { TabList } from "@/types/tab";
 import { HTMLAttributes } from "react";
 import styles from "./style.module.scss";
-import { TabList } from "@/types/tab";
 
-interface IProps extends HTMLAttributes<HTMLUListElement>, TabList {
-  items: string[];
-  activeIndex: number;
-  onChangeTab: (index: number) => void;
-}
+interface IProps extends HTMLAttributes<HTMLUListElement>, TabList {}
 
 const Tabs: React.FC<IProps> = ({
-  items,
-  activeIndex,
+  tabs,
+  activeTabIndex,
   onChangeTab,
   className = "",
   ...restProps
 }) => {
   const combineClassName = `${styles.tabs} ${className}`;
   const checkIsActive = (index: number) => {
-    if (index === activeIndex) return styles["activeIndex"];
+    if (index === activeTabIndex) return styles["activeIndex"];
     return "";
   };
   return (
     <ul className={combineClassName} {...restProps}>
-      {items.map((item, index) => (
+      {tabs.map((item, index) => (
         <li
           className={`${styles.item} ${checkIsActive(index)}`}
           key={index}

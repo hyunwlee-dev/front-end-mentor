@@ -3,8 +3,6 @@ import Input from "@/components/Input";
 import Container from "@/components/Container";
 import styles from "./style.module.scss";
 import Header from "@/components/Header";
-import TodoList from "@/components/TodoList";
-import Tabs from "@/components/Tabs";
 
 const Home: NextPage = () => {
   const todos = [
@@ -21,14 +19,6 @@ const Home: NextPage = () => {
         <Container className={styles.inputWrapper}>
           <Input className={`${styles.leftMargin} ${styles.inputInner}`} />
         </Container>
-        <TodoList
-          todos={todos}
-          onRemove={() => {}}
-          onCheck={() => {}}
-          onClear={() => {}}
-          onCompleted={() => {}}
-          onReorder={() => {}}
-        />
       </main>
     </>
   );
