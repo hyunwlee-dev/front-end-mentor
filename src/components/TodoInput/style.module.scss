@@ -1,0 +1,16 @@
+.todoInput {
+  display: flex;
+  align-items: center;
+  background: var(--theme-box-color);
+  box-shadow: var(--theme-box-shadow);
+  border-radius: 5px;
+  overflow: hidden;
+
+  &.leftSide {
+    padding-left: 20px;
+  }
+
+  .input {
+    flex: 1;
+  }
+}
