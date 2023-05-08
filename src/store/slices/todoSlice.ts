@@ -5,10 +5,12 @@ const todoSlice = createSlice({
   initialState: [
     { id: 1, completed: false, text: "print hello world!" },
     { id: 2, completed: false, text: "play the piano" },
+    { id: 3, completed: false, text: "solve algorithms" },
   ],
   reducers: {
     addTodo: (state, action) => {
       const { text, completed } = action.payload;
+      console.log("action: ", action.payload);
       const updatedTodos = [
         ...state,
         {
@@ -41,9 +43,8 @@ const todoSlice = createSlice({
       localStorage.setItem("todos", JSON.stringify(updatedTodos));
       return updatedTodos;
     },
-    updateTodoList: (state, action) => {
-      const todos = action.payload;
-      const updatedTodos = [...state, todos];
+    updateTodoList: (_, action) => {
+      const updatedTodos = action.payload;
       localStorage.setItem("todos", JSON.stringify(updatedTodos));
       return updatedTodos;
     },
