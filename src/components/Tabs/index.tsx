@@ -13,7 +13,7 @@ const Tabs: React.FC<IProps> = ({
 }) => {
   const combineClassName = `${styles.tabs} ${className}`;
   const checkIsActive = (index: number) => {
-    if (index === activeTabIndex) return styles["activeIndex"];
+    if (index === activeTabIndex) return styles["active"];
     return "";
   };
   return (

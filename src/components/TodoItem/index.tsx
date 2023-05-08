@@ -1,5 +1,4 @@
 import { HTMLAttributes } from "react";
-import Container from "@/components/Container";
 import styles from "./style.module.scss";
 import CheckBoxButton from "../CheckBoxButton";
 import RemoveButton from "@/components/RemoveButton";
@@ -25,11 +24,11 @@ const TodoItem: React.FC<IProps> = ({
     completed
   )} ${className}`;
   return (
-    <Container className={combineClassName} {...restProps}>
+    <div className={combineClassName} {...restProps}>
       <CheckBoxButton isChecked={completed} onClick={() => onCheck(id)} />
       <div className={styles.contents}>{text}</div>
       <RemoveButton onClick={() => onRemove(id)} />
-    </Container>
+    </div>
   );
 };
 

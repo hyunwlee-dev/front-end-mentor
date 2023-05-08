@@ -1,14 +1,38 @@
-import Container from "../Container";
 import { HTMLAttributes } from "react";
 import styles from "./style.module.scss";
+import dynamic from "next/dynamic";
 import {
-  DragDropContext,
-  Draggable,
-  Droppable,
+  DragDropContextProps,
+  DraggableProps,
+  DroppableProps,
   DropResult,
 } from "react-beautiful-dnd";
+
 import TodoItem from "../TodoItem";
 import Button from "../Button";
+
+const DragDropContext = dynamic<DragDropContextProps>(
+  () =>
+    import("react-beautiful-dnd").then((mod) => {
+      return mod.DragDropContext;
+    }) as any,
+  { ssr: false }
+);
+const Droppable = dynamic<DroppableProps>(
+  () =>
+    import("react-beautiful-dnd").then((mod) => {
+      return mod.Droppable;
+    }) as any,
+  { ssr: false }
+);
+
+const Draggable = dynamic<DraggableProps>(
+  () =>
+    import("react-beautiful-dnd").then((mod) => {
+      return mod.Draggable;
+    }) as any,
+  { ssr: false }
+);
 
 interface IProps extends HTMLAttributes<HTMLDivElement>, TodoList {}
 
@@ -34,7 +58,7 @@ const TodoList: React.FC<IProps> = ({
   };
 
   return (
-    <Container className={combineClassName} {...restProps}>
+    <div className={combineClassName} {...restProps}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId={"todo-container"}>
           {(provided) => (
@@ -65,6 +89,7 @@ const TodoList: React.FC<IProps> = ({
                   )}
                 </Draggable>
               ))}
+              {provided.placeholder}
             </div>
           )}
         </Droppable>
@@ -76,7 +101,7 @@ const TodoList: React.FC<IProps> = ({
           <Button onClick={onCompleted}>Completed</Button>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
