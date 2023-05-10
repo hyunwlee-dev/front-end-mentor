@@ -28,18 +28,20 @@ const ThemeButton: React.FC<IProps> = ({
     >
       {theme === Theme.LIGHT && (
         <Image
+          className={styles.themeIcon}
           src="/icons/icon-sun.svg"
           alt="light mode"
-          width={26}
-          height={26}
+          width={20}
+          height={20}
         />
       )}
       {theme === Theme.DARK && (
         <Image
+          className={styles.themeIcon}
           src="/icons/icon-moon.svg"
           alt="dark mode"
-          width={26}
-          height={26}
+          width={20}
+          height={20}
         />
       )}
     </Button>
