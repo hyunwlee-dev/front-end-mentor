@@ -11,6 +11,7 @@ const RemoveButton: React.FC<IProps> = ({ className = "", ...restProps }) => {
   return (
     <Button className={combineClassName} aria-label="Remove" {...restProps}>
       <Image
+        className={styles.removeIcon}
         src="/icons/icon-cross.svg"
         alt="remove button"
         width={12}
