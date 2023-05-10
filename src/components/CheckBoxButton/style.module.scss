@@ -1,9 +1,18 @@
+@import "@/styles/utils";
 .checkBoxButton {
   width: 20px;
   height: 20px;
   background: transparent;
   border: 1px solid var(--theme-light-gray-color);
   border-radius: 50%;
+
+  @include media(">desktop") {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    transition: border-color 0.3s;
+  }
+  
   &.checked {
     background: var(--theme-gradient-color);
     border: 0;
