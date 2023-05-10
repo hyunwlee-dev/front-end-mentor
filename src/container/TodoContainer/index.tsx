@@ -11,7 +11,12 @@ import styles from "./style.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import TodoTabList from "@/components/TodoTabList";
 import { RootState } from "@/store/store";
-import { addTodo, clearTodo, updateTodoList } from "@/store/slices/todoSlice";
+import {
+  addTodo,
+  clearTodo,
+  initTodoList,
+  updateTodoList,
+} from "@/store/slices/todoSlice";
 import { removeTodo } from "@/store/slices/todoSlice";
 import { updateTodo } from "@/store/slices/todoSlice";
 import TodoInput from "@/components/TodoInput";
@@ -109,7 +114,11 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
     }
   }, [todos, activeTabIndex]);
 
-  const reorder = (todos: object[], startIndex: number, endIndex: number) => {
+  const reorder = (
+    todos: Array<Todo>,
+    startIndex: number,
+    endIndex: number
+  ) => {
     const result = Array.from(todos);
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
@@ -189,6 +198,11 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
         return;
     }
   }, [tab]);
+
+  useEffect(() => {
+    const localTodoList = localStorage.getItem("todos");
+    if (localTodoList) dispatch(initTodoList(JSON.parse(localTodoList)));
+  }, []);
 
   return (
     <Container className={styles.todoContainer} {...restProps}>

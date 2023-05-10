@@ -1,16 +1,37 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface Todo {
+  id: number;
+  completed: boolean;
+  text: string;
+}
+
+interface ITodoList extends Array<Todo> {}
+
+interface IAddTodoPayload {
+  text: string;
+  completed: boolean;
+}
+
+interface IRemoveTodoPayload {
+  id: number;
+}
+
+interface IUpdateTodoPayload {
+  id: number;
+  text: string;
+  completed: boolean;
+}
 
 const todoSlice = createSlice({
   name: "todo",
-  initialState: [
-    { id: 1, completed: false, text: "print hello world!" },
-    { id: 2, completed: false, text: "play the piano" },
-    { id: 3, completed: false, text: "solve algorithms" },
-  ],
+  initialState: [] as ITodoList,
   reducers: {
-    addTodo: (state, action) => {
+    initTodoList: (_, action) => {
+      return action.payload;
+    },
+    addTodo: (state, action: PayloadAction<IAddTodoPayload>) => {
       const { text, completed } = action.payload;
-      console.log("action: ", action.payload);
       const updatedTodos = [
         ...state,
         {
@@ -22,13 +43,13 @@ const todoSlice = createSlice({
       localStorage.setItem("todos", JSON.stringify(updatedTodos));
       return updatedTodos;
     },
-    removeTodo: (state, action) => {
+    removeTodo: (state, action: PayloadAction<IRemoveTodoPayload>) => {
       const { id } = action.payload;
       const updatedTodos = state.filter(({ id: _id }) => _id !== id);
       localStorage.setItem("todos", JSON.stringify(updatedTodos));
       return updatedTodos;
     },
-    updateTodo: (state, action) => {
+    updateTodo: (state, action: PayloadAction<IUpdateTodoPayload>) => {
       const { id, text, completed } = action.payload;
       const updatedTodos = state.map((todo) => {
         if (todo.id === id) {
@@ -43,7 +64,7 @@ const todoSlice = createSlice({
       localStorage.setItem("todos", JSON.stringify(updatedTodos));
       return updatedTodos;
     },
-    updateTodoList: (_, action) => {
+    updateTodoList: (state, action: PayloadAction<ITodoList>) => {
       const updatedTodos = action.payload;
       localStorage.setItem("todos", JSON.stringify(updatedTodos));
       return updatedTodos;
@@ -56,5 +77,11 @@ const todoSlice = createSlice({
 });
 
 export default todoSlice;
-export const { addTodo, removeTodo, updateTodo, updateTodoList, clearTodo } =
-  todoSlice.actions;
+export const {
+  initTodoList,
+  addTodo,
+  removeTodo,
+  updateTodo,
+  updateTodoList,
+  clearTodo,
+} = todoSlice.actions;
