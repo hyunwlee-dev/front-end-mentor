@@ -18,11 +18,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@front-end-mentor/todo-app-main",\
         "reference": "workspace:apps/todo-app-main"\
+      },\
+      {\
+        "name": "@front-end-mentor/lib",\
+        "reference": "workspace:packages/lib"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["@front-end-mentor/lib", ["workspace:packages/lib"]],\
       ["@front-end-mentor/todo-app-main", ["workspace:apps/todo-app-main"]],\
       ["front-end-mentor", ["workspace:."]]\
     ],\
@@ -107,11 +112,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@front-end-mentor/lib", [\
+        ["workspace:packages/lib", {\
+          "packageLocation": "./packages/lib/",\
+          "packageDependencies": [\
+            ["@front-end-mentor/lib", "workspace:packages/lib"],\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["@front-end-mentor/todo-app-main", [\
         ["workspace:apps/todo-app-main", {\
           "packageLocation": "./apps/todo-app-main/",\
           "packageDependencies": [\
             ["@front-end-mentor/todo-app-main", "workspace:apps/todo-app-main"],\
+            ["@front-end-mentor/lib", "workspace:packages/lib"],\
             ["@reduxjs/toolkit", "virtual:480777ca6c899a019185f614550c377d873b9c96d5aa033ffdf73f905fd2ee81f265313f69e6ba438c315bb0aff8a2371f6b376c368e6864331bdcf8af31dfc8#npm:1.9.5"],\
             ["@types/node", "npm:18.16.1"],\
             ["@types/react", "npm:18.2.0"],\
