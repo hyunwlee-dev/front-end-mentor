@@ -56,6 +56,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@front-end-mentor/designs@workspace:^, @front-end-mentor/designs@workspace:packages/designs":
+  version: 0.0.0-use.local
+  resolution: "@front-end-mentor/designs@workspace:packages/designs"
+  dependencies:
+    typescript: ^5.0.4
+  languageName: unknown
+  linkType: soft
+
+"@front-end-mentor/hooks@workspace:^, @front-end-mentor/hooks@workspace:packages/hooks":
+  version: 0.0.0-use.local
+  resolution: "@front-end-mentor/hooks@workspace:packages/hooks"
+  dependencies:
+    typescript: ^5.0.4
+  languageName: unknown
+  linkType: soft
+
 "@front-end-mentor/lib@workspace:^, @front-end-mentor/lib@workspace:packages/lib":
   version: 0.0.0-use.local
   resolution: "@front-end-mentor/lib@workspace:packages/lib"
@@ -68,7 +84,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@front-end-mentor/todo-app-main@workspace:apps/todo-app-main"
   dependencies:
+    "@front-end-mentor/designs": "workspace:^"
+    "@front-end-mentor/hooks": "workspace:^"
     "@front-end-mentor/lib": "workspace:^"
+    "@front-end-mentor/utils": "workspace:^"
     "@reduxjs/toolkit": ^1.9.5
     "@types/node": 18.16.1
     "@types/react": 18.2.0
@@ -86,6 +105,14 @@ __metadata:
     react-redux: ^8.0.5
     sass: ^1.62.1
     typescript: 5.0.4
+  languageName: unknown
+  linkType: soft
+
+"@front-end-mentor/utils@workspace:^, @front-end-mentor/utils@workspace:packages/utils":
+  version: 0.0.0-use.local
+  resolution: "@front-end-mentor/utils@workspace:packages/utils"
+  dependencies:
+    typescript: ^5.0.4
   languageName: unknown
   linkType: soft
 
