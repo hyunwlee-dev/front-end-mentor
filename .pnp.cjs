@@ -20,16 +20,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:apps/todo-app-main"\
       },\
       {\
-        "name": "@front-end-mentor/designs",\
-        "reference": "workspace:packages/designs"\
-      },\
-      {\
         "name": "@front-end-mentor/hooks",\
         "reference": "workspace:packages/hooks"\
       },\
       {\
         "name": "@front-end-mentor/lib",\
         "reference": "workspace:packages/lib"\
+      },\
+      {\
+        "name": "@front-end-mentor/ui",\
+        "reference": "workspace:packages/ui"\
       },\
       {\
         "name": "@front-end-mentor/utils",\
@@ -39,10 +39,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
-      ["@front-end-mentor/designs", ["workspace:packages/designs"]],\
       ["@front-end-mentor/hooks", ["workspace:packages/hooks"]],\
       ["@front-end-mentor/lib", ["workspace:packages/lib"]],\
       ["@front-end-mentor/todo-app-main", ["workspace:apps/todo-app-main"]],\
+      ["@front-end-mentor/ui", ["workspace:packages/ui"]],\
       ["@front-end-mentor/utils", ["workspace:packages/utils"]],\
       ["front-end-mentor", ["workspace:."]]\
     ],\
@@ -157,16 +157,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["@front-end-mentor/designs", [\
-        ["workspace:packages/designs", {\
-          "packageLocation": "./packages/designs/",\
-          "packageDependencies": [\
-            ["@front-end-mentor/designs", "workspace:packages/designs"],\
-            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
-          ],\
-          "linkType": "SOFT"\
-        }]\
-      ]],\
       ["@front-end-mentor/hooks", [\
         ["workspace:packages/hooks", {\
           "packageLocation": "./packages/hooks/",\
@@ -192,9 +182,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./apps/todo-app-main/",\
           "packageDependencies": [\
             ["@front-end-mentor/todo-app-main", "workspace:apps/todo-app-main"],\
-            ["@front-end-mentor/designs", "workspace:packages/designs"],\
             ["@front-end-mentor/hooks", "workspace:packages/hooks"],\
             ["@front-end-mentor/lib", "workspace:packages/lib"],\
+            ["@front-end-mentor/ui", "workspace:packages/ui"],\
             ["@front-end-mentor/utils", "workspace:packages/utils"],\
             ["@reduxjs/toolkit", "virtual:480777ca6c899a019185f614550c377d873b9c96d5aa033ffdf73f905fd2ee81f265313f69e6ba438c315bb0aff8a2371f6b376c368e6864331bdcf8af31dfc8#npm:1.9.5"],\
             ["@types/node", "npm:18.16.1"],\
@@ -212,6 +202,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:480777ca6c899a019185f614550c377d873b9c96d5aa033ffdf73f905fd2ee81f265313f69e6ba438c315bb0aff8a2371f6b376c368e6864331bdcf8af31dfc8#npm:18.2.0"],\
             ["react-redux", "virtual:480777ca6c899a019185f614550c377d873b9c96d5aa033ffdf73f905fd2ee81f265313f69e6ba438c315bb0aff8a2371f6b376c368e6864331bdcf8af31dfc8#npm:8.0.5"],\
             ["sass", "npm:1.62.1"],\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@front-end-mentor/ui", [\
+        ["workspace:packages/ui", {\
+          "packageLocation": "./packages/ui/",\
+          "packageDependencies": [\
+            ["@front-end-mentor/ui", "workspace:packages/ui"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
           ],\
           "linkType": "SOFT"\
