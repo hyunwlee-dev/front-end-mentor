@@ -2,7 +2,12 @@
   "name": "@front-end-mentor/ui",
   "packageManager": "yarn@3.5.1",
   "main": "./src/index.ts",
-  "dependencies": {
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^5.0.4"
   }
 }

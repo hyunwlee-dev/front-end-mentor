@@ -1,3 +1,1 @@
-export const sayDesign = () => {
-  return 'hello from design';
-}
+export { default as Button } from './Button';
