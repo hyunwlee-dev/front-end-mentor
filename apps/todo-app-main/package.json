@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint --fix --ext .ts,.tsx ./src",
-    "prettier:fix": "prettier ./src --write"
+    "prettier:fix": "prettier ./src --write",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
