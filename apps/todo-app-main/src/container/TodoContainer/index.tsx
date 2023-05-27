@@ -1,30 +1,17 @@
-import {
-  ChangeEvent,
-  HTMLAttributes,
-  KeyboardEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import styles from "./style.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import TodoTabList from "@/components/TodoTabList";
-import { RootState } from "@/store/store";
-import {
-  addTodo,
-  clearTodo,
-  initTodoList,
-  updateTodoList,
-} from "@/store/slices/todoSlice";
-import { removeTodo } from "@/store/slices/todoSlice";
-import { updateTodo } from "@/store/slices/todoSlice";
-import TodoInput from "@/components/TodoInput";
-import CheckBoxButton from "@/components/CheckBoxButton";
-import Container from "@/components/Container";
-import { TodoTabs } from "@/types/tab";
-import { useRouter } from "next/router";
-import Caption from "@/components/Caption";
+import { useRouter } from 'next/router';
+import { ChangeEvent, HTMLAttributes, KeyboardEvent, useCallback, useEffect, useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import styles from './style.module.scss';
+import Caption from '@/components/Caption';
+import CheckBoxButton from '@/components/CheckBoxButton';
+import Container from '@/components/Container';
+import TodoInput from '@/components/TodoInput';
+import TodoTabList from '@/components/TodoTabList';
+import { addTodo, clearTodo, initTodoList, updateTodoList } from '@/store/slices/todoSlice';
+import { removeTodo } from '@/store/slices/todoSlice';
+import { updateTodo } from '@/store/slices/todoSlice';
+import { RootState } from '@/store/store';
+import { TodoTabs } from '@/types/tab';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {}
 const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
@@ -32,7 +19,7 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
   const todos = useSelector((state: RootState) => {
     return state.todo;
   });
-  const [todoText, setTodoText] = useState<string>("");
+  const [todoText, setTodoText] = useState<string>('');
   const [isTodoCompleted, setIsTodoCompleted] = useState<boolean>(false);
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
   const router = useRouter();
@@ -45,7 +32,9 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
   const onCheck = useCallback(
     (id: number) => {
       const todo = todos.find(({ id: _id }) => _id === id);
-      if (!todo) return;
+      if (!todo) {
+        return;
+      }
       dispatch(
         updateTodo({
           ...todo,
@@ -58,7 +47,9 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
   );
 
   const onAdd = useCallback((completed: boolean, text: string) => {
-    if (!text) return;
+    if (!text) {
+      return;
+    }
     dispatch(
       addTodo({
         text,
@@ -70,9 +61,11 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
   const onKeyUp = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
       const { key } = e;
-      if (key !== "Enter") return;
+      if (key !== 'Enter') {
+        return;
+      }
       onAdd(isTodoCompleted, todoText);
-      setTodoText("");
+      setTodoText('');
     },
     [todoText, isTodoCompleted]
   );
@@ -94,7 +87,7 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
   }, []);
 
   const onCompleted = useCallback(() => {
-    const updatedTodos = todos.map((todo) => {
+    const updatedTodos = todos.map(todo => {
       return {
         ...todo,
         completed: true,
@@ -114,11 +107,7 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
     }
   }, [todos, activeTabIndex]);
 
-  const reorder = (
-    todos: Array<Todo>,
-    startIndex: number,
-    endIndex: number
-  ) => {
+  const reorder = (todos: Todo[], startIndex: number, endIndex: number) => {
     const result = Array.from(todos);
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
@@ -129,11 +118,7 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
     (startIndex: number, endIndex: number) => {
       const originalStartIndex = todos.indexOf(filteredTodos[startIndex]);
       const originalEndIndex = todos.indexOf(filteredTodos[endIndex]);
-      const reorderedTodos = reorder(
-        todos,
-        originalStartIndex,
-        originalEndIndex
-      );
+      const reorderedTodos = reorder(todos, originalStartIndex, originalEndIndex);
       dispatch(updateTodoList(reorderedTodos));
     },
     [todos]
@@ -200,19 +185,16 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
   }, [tab]);
 
   useEffect(() => {
-    const localTodoList = localStorage.getItem("todos");
-    if (localTodoList) dispatch(initTodoList(JSON.parse(localTodoList)));
+    const localTodoList = localStorage.getItem('todos');
+    if (localTodoList) {
+      dispatch(initTodoList(JSON.parse(localTodoList)));
+    }
   }, []);
 
   return (
     <Container className={styles.todoContainer} {...restProps}>
       <TodoInput
-        leftSide={
-          <CheckBoxButton
-            isChecked={isTodoCompleted}
-            onClick={onToggleTodoCompoleted}
-          />
-        }
+        leftSide={<CheckBoxButton isChecked={isTodoCompleted} onClick={onToggleTodoCompoleted} />}
         value={todoText}
         onKeyUp={onKeyUp}
         onChange={onChangeInput}
@@ -224,7 +206,7 @@ const TodoContainer: React.FC<IProps> = ({ ...restProps }) => {
         onClear={onClear}
         onCompleted={onCompleted}
         onReorder={onReorder}
-        tabs={["All", "Active", "Completed"]}
+        tabs={['All', 'Active', 'Completed']}
         activeTabIndex={activeTabIndex}
         onChangeTab={onChangeTab}
       />

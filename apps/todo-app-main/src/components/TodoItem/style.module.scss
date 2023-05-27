@@ -1,4 +1,4 @@
-@import "@/styles/utils";
+@import '@/styles/utils';
 .todoItem {
   display: flex;
   flex-flow: row nowraps;
@@ -22,7 +22,7 @@
     line-height: 12px;
     letter-spacing: -0.17px;
     margin-left: 12px;
-    @include media(">desktop") {
+    @include media('>desktop') {
       font-size: 16px;
       line-height: 16px;
       padding: 0 14px;

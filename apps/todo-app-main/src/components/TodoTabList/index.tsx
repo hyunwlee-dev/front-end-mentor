@@ -1,8 +1,8 @@
-import TodoList from "../TodoList";
-import Tabs from "@/components/Tabs";
-import { TabList } from "@/types/tab";
-import { HTMLAttributes } from "react";
-import styles from "./style.module.scss";
+import { HTMLAttributes } from 'react';
+import TodoList from '../TodoList';
+import styles from './style.module.scss';
+import Tabs from '@/components/Tabs';
+import { TabList } from '@/types/tab';
 
 interface IProps extends HTMLAttributes<HTMLDivElement>, TodoList, TabList {}
 
@@ -16,7 +16,7 @@ const TodoTabList: React.FC<IProps> = ({
   tabs,
   activeTabIndex,
   onChangeTab,
-  className = "",
+  className = '',
   ...restProps
 }) => {
   const combineClassName = `${styles.todoTabList} ${className}`;
@@ -30,11 +30,7 @@ const TodoTabList: React.FC<IProps> = ({
         onCompleted={onCompleted}
         onReorder={onReorder}
       />
-      <Tabs
-        tabs={tabs}
-        activeTabIndex={activeTabIndex}
-        onChangeTab={onChangeTab}
-      />
+      <Tabs tabs={tabs} activeTabIndex={activeTabIndex} onChangeTab={onChangeTab} />
     </div>
   );
 };

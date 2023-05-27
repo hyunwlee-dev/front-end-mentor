@@ -1,10 +1,10 @@
-import { HTMLAttributes } from "react";
-import styles from "./style.module.scss";
-import Link from "next/link";
+import Link from 'next/link';
+import { HTMLAttributes } from 'react';
+import styles from './style.module.scss';
 
 interface IProps extends HTMLAttributes<HTMLAnchorElement> {}
 
-const Logo: React.FC<IProps> = ({ className = "", children, ...restProps }) => {
+const Logo: React.FC<IProps> = ({ className = '', children, ...restProps }) => {
   const combineClassName = `${styles.logo} ${className}`;
   return (
     <Link href="/" className={combineClassName} {...restProps}>

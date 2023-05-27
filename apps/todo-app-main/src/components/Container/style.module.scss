@@ -1,10 +1,10 @@
-@import "@/styles/utils";
+@import '@/styles/utils';
 
 .container {
   max-width: 325px;
   margin: 0 auto;
 
-  @include media(">desktop") {
+  @include media('>desktop') {
     max-width: 540px;
   }
 }
