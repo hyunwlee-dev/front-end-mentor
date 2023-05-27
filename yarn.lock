@@ -79,6 +79,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@front-end-mentor/test-project@workspace:apps/test-project":
+  version: 0.0.0-use.local
+  resolution: "@front-end-mentor/test-project@workspace:apps/test-project"
+  dependencies:
+    "@types/node": 20.2.5
+    "@types/react": 18.2.7
+    "@types/react-dom": 18.2.4
+    eslint: 8.41.0
+    eslint-config-next: 13.4.4
+    next: 13.4.4
+    react: 18.2.0
+    react-dom: 18.2.0
+    typescript: 5.0.4
+  languageName: unknown
+  linkType: soft
+
 "@front-end-mentor/todo-app-main@workspace:apps/todo-app-main":
   version: 0.0.0-use.local
   resolution: "@front-end-mentor/todo-app-main@workspace:apps/todo-app-main"
@@ -4433,22 +4449,6 @@ __metadata:
   checksum: f23832fceeba7578bf31907aac744ae21e74a66f4a17a9e94507acf460e48f6db598c7023882db33bab75b80e027c21f276d405e4a0322d58f51c7088d428268
   languageName: node
   linkType: hard
-
-"test-project@workspace:apps/test-project":
-  version: 0.0.0-use.local
-  resolution: "test-project@workspace:apps/test-project"
-  dependencies:
-    "@types/node": 20.2.5
-    "@types/react": 18.2.7
-    "@types/react-dom": 18.2.4
-    eslint: 8.41.0
-    eslint-config-next: 13.4.4
-    next: 13.4.4
-    react: 18.2.0
-    react-dom: 18.2.0
-    typescript: 5.0.4
-  languageName: unknown
-  linkType: soft
 
 "text-table@npm:^0.2.0":
   version: 0.2.0
