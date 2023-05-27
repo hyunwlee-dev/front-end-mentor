@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "arcanis.vscode-zipfs",
-    "abumalick.vscode-nvm"
+    "abumalick.vscode-nvm",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
   ]
 }
