@@ -1,6 +1,7 @@
 import { HTMLAttributes, ReactNode } from 'react';
-import Input from '../Input';
+import { Input } from '@front-end-mentor/ui';
 import styles from './style.module.scss';
+import inputStyles from '../Input/style.module.scss';
 
 interface Iprops extends HTMLAttributes<HTMLDivElement> {
   leftSide?: ReactNode;
@@ -18,7 +19,7 @@ const TodoInput: React.FC<Iprops> = ({ leftSide, value, className = '', ...restP
   return (
     <div className={combineClassName}>
       {leftSide}
-      <Input className={styles.input} value={value} {...restProps} />
+      <Input className={`${styles.input} ${inputStyles.input}`} value={value} {...restProps} />
     </div>
   );
 };

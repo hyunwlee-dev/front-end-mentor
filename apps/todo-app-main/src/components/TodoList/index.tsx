@@ -2,9 +2,10 @@ import dynamic from 'next/dynamic';
 import { HTMLAttributes } from 'react';
 import { DragDropContextProps, DraggableProps, DroppableProps, DropResult } from 'react-beautiful-dnd';
 
-import Button from '../Button';
 import TodoItem from '../TodoItem';
 import styles from './style.module.scss';
+import buttonStyles from '../Button/style.module.scss';
+import { Button } from '@front-end-mentor/ui';
 
 const DragDropContext = dynamic<DragDropContextProps>(
   () =>
@@ -84,8 +85,12 @@ const TodoList: React.FC<IProps> = ({
       <div className={styles.footer}>
         <span className={styles.activeItemCount}>{checkActiveItemCount()}</span>
         <div className={styles.buttonContainer}>
-          <Button onClick={onClear}>Clear</Button>
-          <Button onClick={onCompleted}>Completed</Button>
+          <Button className={buttonStyles.button} onClick={() => onClear()}>
+            Clear
+          </Button>
+          <Button className={buttonStyles.button} onClick={() => onCompleted()}>
+            Completed
+          </Button>
         </div>
       </div>
     </div>

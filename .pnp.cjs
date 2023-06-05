@@ -32,6 +32,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/lib"\
       },\
       {\
+        "name": "@front-end-mentor/types",\
+        "reference": "workspace:packages/types"\
+      },\
+      {\
         "name": "@front-end-mentor/ui",\
         "reference": "workspace:packages/ui"\
       },\
@@ -47,6 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@front-end-mentor/lib", ["workspace:packages/lib"]],\
       ["@front-end-mentor/test-project", ["workspace:apps/test-project"]],\
       ["@front-end-mentor/todo-app-main", ["workspace:apps/todo-app-main"]],\
+      ["@front-end-mentor/types", ["workspace:packages/types"]],\
       ["@front-end-mentor/ui", ["workspace:packages/ui"]],\
       ["@front-end-mentor/utils", ["workspace:packages/utils"]],\
       ["front-end-mentor", ["workspace:."]]\
@@ -207,6 +212,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@front-end-mentor/todo-app-main", "workspace:apps/todo-app-main"],\
             ["@front-end-mentor/hooks", "workspace:packages/hooks"],\
             ["@front-end-mentor/lib", "workspace:packages/lib"],\
+            ["@front-end-mentor/types", "workspace:packages/types"],\
             ["@front-end-mentor/ui", "workspace:packages/ui"],\
             ["@front-end-mentor/utils", "workspace:packages/utils"],\
             ["@reduxjs/toolkit", "virtual:480777ca6c899a019185f614550c377d873b9c96d5aa033ffdf73f905fd2ee81f265313f69e6ba438c315bb0aff8a2371f6b376c368e6864331bdcf8af31dfc8#npm:1.9.5"],\
@@ -230,11 +236,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT"\
         }]\
       ]],\
+      ["@front-end-mentor/types", [\
+        ["workspace:packages/types", {\
+          "packageLocation": "./packages/types/",\
+          "packageDependencies": [\
+            ["@front-end-mentor/types", "workspace:packages/types"],\
+            ["@types/node", "npm:20.2.5"],\
+            ["@types/react", "npm:18.2.8"],\
+            ["react", "npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=77c9e2"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["@front-end-mentor/ui", [\
         ["workspace:packages/ui", {\
           "packageLocation": "./packages/ui/",\
           "packageDependencies": [\
             ["@front-end-mentor/ui", "workspace:packages/ui"],\
+            ["@front-end-mentor/types", "workspace:packages/types"],\
             ["@types/node", "npm:20.2.5"],\
             ["@types/react", "npm:18.2.7"],\
             ["@types/react-dom", "npm:18.2.4"],\
@@ -675,6 +695,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-react-npm-18.2.7-1d4a6858d6-caa5da4cf9.zip/node_modules/@types/react/",\
           "packageDependencies": [\
             ["@types/react", "npm:18.2.7"],\
+            ["@types/prop-types", "npm:15.7.5"],\
+            ["@types/scheduler", "npm:0.16.3"],\
+            ["csstype", "npm:3.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:18.2.8", {\
+          "packageLocation": "./.yarn/cache/@types-react-npm-18.2.8-b0b52e84d7-351fe2450d.zip/node_modules/@types/react/",\
+          "packageDependencies": [\
+            ["@types/react", "npm:18.2.8"],\
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/scheduler", "npm:0.16.3"],\
             ["csstype", "npm:3.1.2"]\
@@ -5740,6 +5770,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typescript-patch-ecf29fafbd-d26b6ba97b.zip/node_modules/typescript/",\
           "packageDependencies": [\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=77c9e2", {\
+          "packageLocation": "./.yarn/cache/typescript-patch-b923e81685-32a25b2e12.zip/node_modules/typescript/",\
+          "packageDependencies": [\
+            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=77c9e2"]\
           ],\
           "linkType": "HARD"\
         }]\
