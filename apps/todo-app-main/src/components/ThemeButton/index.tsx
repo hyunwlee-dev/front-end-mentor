@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { ButtonHTMLAttributes } from 'react';
 import styles from './style.module.scss';
-import Button from '@/components/Button';
+import buttonStyles from '../Button/style.module.scss';
+import { Button } from '@front-end-mentor/ui';
 import { Theme } from '@/types/theme';
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -16,7 +17,7 @@ const getAriaLabel = (theme: Theme) => {
 };
 
 const ThemeButton: React.FC<IProps> = ({ theme, className = '', ...restProps }) => {
-  const combineClassName = `${styles.themeButton} ${className}`;
+  const combineClassName = `${styles.themeButton} ${className} ${buttonStyles.button}`;
 
   return (
     <Button className={combineClassName} aria-label={getAriaLabel(theme)} {...restProps}>
