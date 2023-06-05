@@ -1,1 +1,1 @@
-export { Header, StyledHeader } from './Header';
+export { Header } from './Header';

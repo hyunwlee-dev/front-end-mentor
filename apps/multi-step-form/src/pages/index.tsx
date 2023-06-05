@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { styled } from 'styled-components';
-import { StyledHeader } from '@/components/Header';
+import { Header } from '@/components/Header';
 import { MultiStepForm } from '@/Container/MultiStepFormContainer';
 
 const Home: NextPage = () => {
@@ -28,6 +28,22 @@ const Main = styled.main`
   }
 `;
 
+const StyledHeader = styled(Header)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 172px;
+  background: var(--theme-background-image) no-repeat;
+  background-size: cover;
+  @media (min-width: 992px) {
+    margin: 16px;
+    width: 274px;
+    height: 568px;
+  }
+`;
+
 const StyledMultiStepFormContainer = styled(MultiStepForm)`
   position: fixed;
   content: '';
@@ -37,7 +53,6 @@ const StyledMultiStepFormContainer = styled(MultiStepForm)`
   left: 50%;
   transform: translate(-50%, 0%);
   background: var(--theme-white);
-  outline: 3px solid red;
   @media (min-width: 992px) {
     margin: 16px;
     position: absolute;
