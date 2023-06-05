@@ -212,7 +212,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@front-end-mentor/todo-app-main", "workspace:apps/todo-app-main"],\
             ["@front-end-mentor/hooks", "workspace:packages/hooks"],\
             ["@front-end-mentor/lib", "workspace:packages/lib"],\
-            ["@front-end-mentor/types", "workspace:packages/types"],\
             ["@front-end-mentor/ui", "workspace:packages/ui"],\
             ["@front-end-mentor/utils", "workspace:packages/utils"],\
             ["@reduxjs/toolkit", "virtual:480777ca6c899a019185f614550c377d873b9c96d5aa033ffdf73f905fd2ee81f265313f69e6ba438c315bb0aff8a2371f6b376c368e6864331bdcf8af31dfc8#npm:1.9.5"],\

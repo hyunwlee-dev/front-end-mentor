@@ -101,7 +101,6 @@ __metadata:
   dependencies:
     "@front-end-mentor/hooks": "workspace:^"
     "@front-end-mentor/lib": "workspace:^"
-    "@front-end-mentor/types": "workspace:^"
     "@front-end-mentor/ui": "workspace:^"
     "@front-end-mentor/utils": "workspace:^"
     "@reduxjs/toolkit": ^1.9.5
