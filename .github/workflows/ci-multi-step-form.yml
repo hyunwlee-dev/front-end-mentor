@@ -1,11 +1,11 @@
-name: CI-test-project
+name: CI-multi-step-form
 
 on:
   push:
     branches:
-      - deploy/test-project
+      - deploy/multi-step-form
     paths:
-      - 'apps/test-project/**'
+      - 'apps/multi-step-form/**'
 
 jobs:
   test:
@@ -25,6 +25,6 @@ jobs:
         uses: ./.github/actions/yarn-install
 
       - name: Build web-app
-        working-directory: apps/test-project
+        working-directory: apps/multi-step-form
         run: |
           yarn build

@@ -9,8 +9,8 @@ on:
         default: 'todo-app-main'
         type: choice
         options:
-          - test-project
           - todo-app-main
+					- multi-step-form
 
 jobs:
   test:
