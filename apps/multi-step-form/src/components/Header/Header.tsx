@@ -5,7 +5,7 @@ import { styled } from 'styled-components';
 interface IProps extends HTMLAttributes<HTMLHeadElement> {}
 const Header: React.FC<IProps> = ({ ...restProps }) => {
   return (
-    <header {...restProps}>
+    <StyledHeader {...restProps}>
       <IndexButtonUl>
         <IndexButtonLi>
           <IndexButton>1</IndexButton>
@@ -28,9 +28,13 @@ const Header: React.FC<IProps> = ({ ...restProps }) => {
           <Info>summary</Info>
         </IndexButtonLi>
       </IndexButtonUl>
-    </header>
+    </StyledHeader>
   );
 };
+
+const StyledHeader = styled.header`
+  width: 100%;
+`;
 
 const IndexButton = styled(Button)`
   border: 0;
