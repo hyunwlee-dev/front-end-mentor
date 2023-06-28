@@ -1,32 +1,27 @@
 import { Button } from '@front-end-mentor/ui';
 import { HTMLAttributes } from 'react';
+import * as React from 'react';
 import { styled } from 'styled-components';
+import { IStepObj } from '@/container/MultiStepFormContainer';
 
-interface IProps extends HTMLAttributes<HTMLHeadElement> {}
-const Header: React.FC<IProps> = ({ ...restProps }) => {
+interface IProps extends HTMLAttributes<HTMLHeadElement> {
+  stepObjs: IStepObj[];
+  step: number;
+}
+
+const Header: React.FC<IProps> = ({ stepObjs, step, ...restProps }) => {
   return (
     <StyledHeader {...restProps}>
-      <IndexButtonUl>
-        <IndexButtonLi>
-          <IndexButton>1</IndexButton>
-          <Step>step 1</Step>
-          <Info>your info</Info>
+      <IndexButtonUl> 
+      {
+        stepObjs.map(obj => (
+        <IndexButtonLi key={obj.description}>
+          <IndexButton>{obj.step}</IndexButton>
+          <Step>{`step ${obj.step}`}</Step>
+          <Info>{obj.description}</Info>
         </IndexButtonLi>
-        <IndexButtonLi>
-          <IndexButton>2</IndexButton>
-          <Step>step 2</Step>
-          <Info>select plan</Info>
-        </IndexButtonLi>
-        <IndexButtonLi>
-          <IndexButton>3</IndexButton>
-          <Step>step 3</Step>
-          <Info>add-ons</Info>
-        </IndexButtonLi>
-        <IndexButtonLi>
-          <IndexButton>4</IndexButton>
-          <Step>step 4</Step>
-          <Info>summary</Info>
-        </IndexButtonLi>
+        ))
+      }
       </IndexButtonUl>
     </StyledHeader>
   );

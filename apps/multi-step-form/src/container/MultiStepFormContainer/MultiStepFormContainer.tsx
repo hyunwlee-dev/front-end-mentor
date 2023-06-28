@@ -1,12 +1,43 @@
-import { styled } from 'styled-components';
-import { Header } from '@/components/Header';
 import { Container } from '@front-end-mentor/ui';
+import { useDispatch, useSelector } from 'react-redux';
+import { styled } from 'styled-components';
+import { Header, 
+         PersonalInfoForm,
+         SelectPlanForm,
+         PickAddOnsForm,
+         FinishingUpForm,
+         SubscriptionCompleteCard
+} from '@/components';
+import { RootState } from '@/store/store';
+import { nextStep } from '@/store/slices/stepSlice';
+
+interface IStepObj {
+  step: number;
+  description: string;
+}
+
+const stepObjs = [
+  {step: 1, description: 'your info'},
+  {step: 2, description: 'select plan'},
+  {step: 3, description: 'add-ons'},
+  {step: 4, description: 'summary'}
+];
+
 
 const MultiStepFormContainer = () => {
+  const step = useSelector((state: RootState) => {
+    return state.step;
+  });
+  const dispatch = useDispatch();
   return (
     <StyledDiv>
-      <StyledHeader />
-      <StyledContainer />
+      <StyledHeader stepObjs={stepObjs} step={step}/>
+      {step === 0 && <PersonalInfoForm />}
+      {step === 1 && <SelectPlanForm />}
+      {step === 2 && <PickAddOnsForm />}
+      {step === 3 && <FinishingUpForm />}
+      {step === 4 && <SubscriptionCompleteCard />}
+      <button onClick={() => dispatch(nextStep())}>테스트 버튼</button>
     </StyledDiv>
   );
 };
@@ -65,3 +96,4 @@ const StyledContainer = styled(Container)`
 `;
 
 export {MultiStepFormContainer};
+export type {IStepObj};

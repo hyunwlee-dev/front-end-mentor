@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { styled } from 'styled-components';
-import { MultiStepFormContainer } from '@/container/MultiStepFormContainer';
+import { MultiStepFormContainer } from '@/container';
 import { A11yHidden } from '@front-end-mentor/ui';
 
 const Home: NextPage = () => {
