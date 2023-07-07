@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import { MultiStepFormContainer } from '@/container';
 import { A11yHidden, Button, Container } from '@front-end-mentor/ui';
 import { useDispatch } from 'react-redux';
-import { nextStep } from '@/store/slices/stepSlice';
+import { nextStep, previousStep } from '@/store/slices/stepSlice';
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
@@ -15,6 +15,7 @@ const Home: NextPage = () => {
       </Main>
       <Footer>
         <ButtonWrapper>
+          <PreviousButton onClick={() => dispatch(previousStep())}>Go Back</PreviousButton>
           <NextButton onClick={() => dispatch(nextStep())}>Next step</NextButton>
         </ButtonWrapper>
       </Footer>
@@ -50,19 +51,27 @@ const ButtonWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
 `;
 
-const NextButton = styled(Button)`
+const CommonButton = styled(Button)`
   border: 0;
   cursor: pointer;
+  font: normal 500 14px / normal Ubuntu;
+`;
+
+const PreviousButton = styled(CommonButton)`
+  background: transparent;
+  color: var(--theme-cool-gray);
+`;
+
+const NextButton = styled(CommonButton)`
   width: 97px;
   height: 40px;
   border-radius: 4px;
-  background: var(--denim, #022959);
+  background: var(--theme-marine-blue);
   color: var(--theme-white);
-  font: normal 500 14px / normal Ubuntu;
 `;
 
 export default Home;

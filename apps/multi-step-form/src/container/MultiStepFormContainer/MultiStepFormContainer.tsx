@@ -27,11 +27,11 @@ const stepObjs = [
 ];
 
 const MultiStepFormContainer = () => {
-  const [name, setName] = useState<string>('');
+  const [username, setUsername] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const onNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+    setUsername(e.target.value);
   };
   const onEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -49,7 +49,7 @@ const MultiStepFormContainer = () => {
       <StyledContainer>
         {step === 0 && (
           <PersonalInfoForm
-            name={name}
+            username={username}
             email={email}
             phone={phone}
             onNameChange={onNameChange}

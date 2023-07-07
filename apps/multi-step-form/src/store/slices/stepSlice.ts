@@ -7,8 +7,11 @@ const stepSlice = createSlice({
     nextStep: state => {
       return state + 1;
     },
+    previousStep: state => {
+      return state - 1;
+    }
   },
 });
 
 export default stepSlice;
-export const { nextStep } = stepSlice.actions;
+export const { nextStep, previousStep } = stepSlice.actions;

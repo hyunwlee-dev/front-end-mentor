@@ -4,16 +4,16 @@ import { useId, HTMLAttributes, HTMLDivElement, HTMLInputElement } from 'react';
 import * as React from 'react';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
-  name: string;
+  username: string;
   email: string;
   phone: string;
   onNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onPhoneChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const PersonalInfoForm: React.FC<IProps> = ({ name, email, phone, onNameChange, onEmailChange, onPhoneChange }) => {
-  const nameId = useId();
+const PersonalInfoForm: React.FC<IProps> = ({ username, email, phone, onNameChange, onEmailChange, onPhoneChange }) => {
+  const usernameId = useId();
   const emailAddressId = useId();
   const phoneNumberId = useId();
   return (
@@ -22,8 +22,8 @@ const PersonalInfoForm: React.FC<IProps> = ({ name, email, phone, onNameChange, 
       <P>Please provide your name, email, address, and phone number.</P>
       <Form>
         <A11yHidden as="legend">name, email, phone form</A11yHidden>
-        <StyledLabel htmlFor={nameId}>Name</StyledLabel>
-        <StyledInput id={nameId} value={name} onChange={onNameChange} placeholder="e.g Stephen King" />
+        <StyledLabel htmlFor={usernameId}>Name</StyledLabel>
+        <StyledInput id={usernameId} value={username} onChange={onNameChange} placeholder="e.g Stephen King" />
         <StyledLabel htmlFor={emailAddressId}>Email Address</StyledLabel>
         <StyledInput
           id={emailAddressId}
