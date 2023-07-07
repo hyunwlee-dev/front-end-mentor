@@ -1,1 +1,1 @@
-export {MultiStepFormContainer} from './MultiStepFormContainer/';
+export { MultiStepFormContainer } from './MultiStepFormContainer/';

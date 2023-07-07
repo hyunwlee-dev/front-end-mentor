@@ -1,1 +1,1 @@
-export {FinishingUpForm} from './FinishingUpForm';
+export { FinishingUpForm } from './FinishingUpForm';

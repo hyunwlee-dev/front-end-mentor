@@ -12,16 +12,14 @@ interface IProps extends HTMLAttributes<HTMLHeadElement> {
 const Header: React.FC<IProps> = ({ stepObjs, step, ...restProps }) => {
   return (
     <StyledHeader {...restProps}>
-      <IndexButtonUl> 
-      {
-        stepObjs.map(obj => (
-        <IndexButtonLi key={obj.description}>
-          <IndexButton>{obj.step}</IndexButton>
-          <Step>{`step ${obj.step}`}</Step>
-          <Info>{obj.description}</Info>
-        </IndexButtonLi>
-        ))
-      }
+      <IndexButtonUl>
+        {stepObjs.map(obj => (
+          <IndexButtonLi key={obj.description}>
+            <IndexButton>{obj.step}</IndexButton>
+            <Step>{`step ${obj.step}`}</Step>
+            <Info>{obj.description}</Info>
+          </IndexButtonLi>
+        ))}
       </IndexButtonUl>
     </StyledHeader>
   );

@@ -7,10 +7,10 @@ export enum Step {
 }
 
 export namespace Step {
-  export function toNumber(step: Step): number {
+  export function toString(step: Step): string {
     return Step[step];
   }
-  export function fromNumber(step: number): Step {
-    return Step[step];
+  export function fromString(step: string): Step {
+    return (Step as any)[step];
   }
 }

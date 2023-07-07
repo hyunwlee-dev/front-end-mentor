@@ -1,1 +1,1 @@
-export {PickAddOnsForm} from './PickAddOnsForm';
+export { PickAddOnsForm } from './PickAddOnsForm';

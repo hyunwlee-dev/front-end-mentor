@@ -1,11 +1,11 @@
-import { Container } from "@front-end-mentor/ui"
+import { Container } from '@front-end-mentor/ui';
 
 const FinishingUpForm = () => {
   return (
     <Container>
-      finishingUpForm
+      <h2>Finishing up</h2>
     </Container>
-  )
-}
+  );
+};
 
-export {FinishingUpForm};
+export { FinishingUpForm };

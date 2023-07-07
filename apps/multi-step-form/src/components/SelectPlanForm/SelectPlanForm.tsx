@@ -1,12 +1,11 @@
-import { Container } from "@front-end-mentor/ui"
+import { Container } from '@front-end-mentor/ui';
 
 const SelectPlanForm = () => {
   return (
     <Container>
-      SelectPlanForm
+      <h2>Select your plan</h2>
     </Container>
-  )
-}
+  );
+};
 
-export {SelectPlanForm};
-
+export { SelectPlanForm };

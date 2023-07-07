@@ -1,2 +1,2 @@
-export {MultiStepFormContainer} from './MultiStepFormContainer';
-export type {IStepObj} from './MultiStepFormContainer';
+export { MultiStepFormContainer } from './MultiStepFormContainer';
+export type { IStepObj } from './MultiStepFormContainer';

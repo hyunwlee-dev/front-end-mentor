@@ -1,12 +1,11 @@
-import { Container } from "@front-end-mentor/ui"
+import { Container } from '@front-end-mentor/ui';
 
 const PickAddOnsForm = () => {
   return (
     <Container>
-      PickAddOnsForm
+      <h2>Pick add-ons</h2>
     </Container>
-  )
-}
+  );
+};
 
-export {PickAddOnsForm};
-
+export { PickAddOnsForm };
