@@ -4,8 +4,13 @@ import { MultiStepFormContainer } from '@/container';
 import { A11yHidden, Button, Container } from '@front-end-mentor/ui';
 import { useDispatch } from 'react-redux';
 import { nextStep, previousStep } from '@/store/slices/stepSlice';
+import { RootState } from '@/store/store';
+import { useSelector } from 'react-redux';
 
 const Home: NextPage = () => {
+  const step = useSelector((state: RootState) => {
+    return state.step;
+  });
   const dispatch = useDispatch();
   return (
     <FlexContainer>
@@ -14,9 +19,10 @@ const Home: NextPage = () => {
         <StyledMultiStepFormContainer />
       </Main>
       <Footer>
-        <ButtonWrapper>
-          <PreviousButton onClick={() => dispatch(previousStep())}>Go Back</PreviousButton>
-          <NextButton onClick={() => dispatch(nextStep())}>Next step</NextButton>
+        <ButtonWrapper step={step}>
+          {step > 0 && step < 5 && <PreviousButton onClick={() => dispatch(previousStep())}>Go Back</PreviousButton>}
+          {step < 3 && <NextButton onClick={() => dispatch(nextStep())}>Next step</NextButton>}
+          {step === 3 && <ConfirmButton onClick={() => dispatch(nextStep())}>Confirm</ConfirmButton>}
         </ButtonWrapper>
       </Footer>
     </FlexContainer>
@@ -45,13 +51,13 @@ const Footer = styled.footer`
   background: var(--theme-white);
 `;
 
-const ButtonWrapper = styled.div`
+const ButtonWrapper = styled.div<{ step: number }>`
   width: 90%;
   height: 100%;
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: ${props => (props.step === 0 ? 'end' : 'space-between')};
   align-items: center;
 `;
 
@@ -71,6 +77,14 @@ const NextButton = styled(CommonButton)`
   height: 40px;
   border-radius: 4px;
   background: var(--theme-marine-blue);
+  color: var(--theme-white);
+`;
+
+const ConfirmButton = styled(CommonButton)`
+  width: 97px;
+  height: 40px;
+  border-radius: 4px;
+  background: var(--theme-purplish-blue);
   color: var(--theme-white);
 `;
 

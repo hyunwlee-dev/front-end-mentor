@@ -9,7 +9,7 @@ const stepSlice = createSlice({
     },
     previousStep: state => {
       return state - 1;
-    }
+    },
   },
 });
 
