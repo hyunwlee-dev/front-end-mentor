@@ -4,7 +4,7 @@ import * as React from 'react';
 type A11yHiddenProps<T extends React.ElementType = 'span'> = PolymorphicProps<
   T,
   {
-    children: React.ReactNode;
+    children?: React.ReactNode;
   }
 >;
 

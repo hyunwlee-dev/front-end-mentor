@@ -19,6 +19,12 @@ interface IStepObj {
   description: string;
 }
 
+interface IPlanObjs {
+  id: number;
+  name: string;
+  info: string;
+}
+
 const stepObjs = [
   { step: 1, description: 'your info' },
   { step: 2, description: 'select plan' },
@@ -26,10 +32,17 @@ const stepObjs = [
   { step: 4, description: 'summary' },
 ];
 
+const planObjs = [
+  { id: 0, name: 'arcade', info: '$9/mo' },
+  { id: 1, name: 'advanced', info: '$12/mo' },
+  { id: 2, name: 'pro', info: '$15/mo' },
+];
+
 const MultiStepFormContainer = () => {
   const [username, setUsername] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
+  const [plan, setPlan] = useState<number>(0);
   const onNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
   };
@@ -38,6 +51,9 @@ const MultiStepFormContainer = () => {
   };
   const onPhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
     setPhone(e.target.value);
+  };
+  const onPlanChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPlan(Number(e.target.value));
   };
   const step = useSelector((state: RootState) => {
     return state.step;
@@ -57,7 +73,7 @@ const MultiStepFormContainer = () => {
             onPhoneChange={onPhoneChange}
           />
         )}
-        {step === 1 && <SelectPlanForm />}
+        {step === 1 && <SelectPlanForm planObjs={planObjs} plan={plan} onChange={onPlanChange} />}
         {step === 2 && <PickAddOnsForm />}
         {step === 3 && <FinishingUpForm />}
         {step === 4 && <SubscriptionCompleteCard />}
@@ -135,4 +151,4 @@ const StyledContainer = styled(Container)`
 `;
 
 export { MultiStepFormContainer };
-export type { IStepObj };
+export type { IStepObj, IPlanObjs };
