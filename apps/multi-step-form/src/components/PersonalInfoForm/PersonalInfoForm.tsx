@@ -1,6 +1,6 @@
 import { A11yHidden, Container, Input, Label } from '@front-end-mentor/ui';
 import { styled } from 'styled-components';
-import { useId, HTMLAttributes, HTMLDivElement, HTMLInputElement } from 'react';
+import { useId, HTMLAttributes } from 'react';
 import * as React from 'react';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
