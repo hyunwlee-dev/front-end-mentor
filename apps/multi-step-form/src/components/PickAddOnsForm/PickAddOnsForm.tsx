@@ -17,7 +17,12 @@ const PickAddOnsForm: React.FC<IProps> = ({ addOnsObjs, pickedAddOns, onPickedAd
       <P>Add-ons help enhance your gaming experience.</P>
       <Form>
         {addOnsObjs.map(addOnsObj => (
-          <AddOnButton type="button" key={`addOnsObj_${addOnsObj.id}`} onClick={() => onPickedAddOns(addOnsObj.id)}>
+          <AddOnButton
+            type="button"
+            key={`addOnsObj_${addOnsObj.id}`}
+            onClick={() => onPickedAddOns(addOnsObj.id)}
+            active={pickedAddOns.includes(addOnsObj.id) ? 1 : 0}
+          >
             <AddOnInput
               as="input"
               type="checkbox"
@@ -58,10 +63,11 @@ const Form = styled.div`
   margin: 22px 0;
 `;
 
-const AddOnButton = styled(Button)`
+const AddOnButton = styled(Button)<{ active: number }>`
   height: 62px;
-  border: 1px solid var(--theme-light-gray);
-  background: transparent;
+  border: ${props =>
+    props.active === 1 ? '1px solid var(--theme-purplish-blue)' : '1px solid var(--theme-light-gray)'};
+  background: ${props => (props.active === 1 ? 'var(--theme-little-gray)' : 'transparent')};
   border-radius: 8px;
   display: flex;
   flex-flow: column nowrap;

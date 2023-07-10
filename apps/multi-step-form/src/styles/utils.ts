@@ -8,6 +8,7 @@ export const variables = `
     --theme-strawberry-red: hsl(354, 84%, 57%);
     --theme-cool-gray: hsl(231, 11%, 63%);
     --theme-light-gray: hsl(229, 24%, 87%);
+    --theme-little-gray: #F8F9FF;
     --theme-magnolia: hsl(217, 100%, 97%);
     --theme-alabaster: hsl(231, 100%, 99%);
     --theme-white: hsl(0, 0%, 100%);
