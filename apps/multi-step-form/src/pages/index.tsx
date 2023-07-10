@@ -33,6 +33,7 @@ const FlexContainer = styled(Container)`
   height: 100vh;
   display: flex;
   flex-flow: column nowrap;
+  min-width: 343px;
 `;
 
 const Main = styled.main`

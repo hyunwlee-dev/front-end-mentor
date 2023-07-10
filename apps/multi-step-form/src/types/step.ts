@@ -6,11 +6,12 @@ export enum Step {
   END,
 }
 
+/* eslint-disabled */
 export namespace Step {
-  export function toString(step: Step): string {
+  export function toNumber(step: Step): number {
     return Step[step];
   }
-  export function fromString(step: string): Step {
+  export function fromNumber(step: string): Step {
     return (Step as any)[step];
   }
 }

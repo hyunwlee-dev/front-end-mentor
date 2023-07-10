@@ -18,7 +18,7 @@ const Label: LabelComponent = React.forwardRef(
     ref: PolymorphicRef<T>
   ) => {
     return (
-      <label className={className} ref={ref} {...restProps}>
+      <label htmlFor={htmlFor} className={className} ref={ref} {...restProps}>
         {children}
       </label>
     );

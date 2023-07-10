@@ -13,15 +13,23 @@ import { nextStep } from '@/store/slices/stepSlice';
 import { RootState } from '@/store/store';
 import { ChangeEvent, useState } from 'react';
 import { Footer } from '@/components/Footer';
+import { useToggle } from '@front-end-mentor/hooks';
 
 interface IStepObj {
   step: number;
   description: string;
 }
 
-interface IPlanObjs {
+interface IPlanObj {
   id: number;
   name: string;
+  info: string;
+}
+
+interface IAddOnsObj {
+  id: number;
+  main: string;
+  sub: string;
   info: string;
 }
 
@@ -38,11 +46,19 @@ const planObjs = [
   { id: 2, name: 'pro', info: '$15/mo' },
 ];
 
+const addOnsObjs = [
+  { id: 0, main: 'Online service', sub: 'Access to multiplayer games', info: '+$1/mo' },
+  { id: 1, main: 'Larger storage', sub: 'Extra 1TB of cloud save', info: '+$2/mo' },
+  { id: 2, main: 'Customizable profile', sub: 'Custom theme on your profile', info: '+$2/mo' },
+];
+
 const MultiStepFormContainer = () => {
+  const { visible: duration, toggle: onDurationToggle } = useToggle();
   const [username, setUsername] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [plan, setPlan] = useState<number>(0);
+  const [pickedAddOns, setPickedAddOns] = useState<number[]>([]);
   const onNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
   };
@@ -54,6 +70,12 @@ const MultiStepFormContainer = () => {
   };
   const onPlanChange = (e: ChangeEvent<HTMLInputElement>) => {
     setPlan(Number(e.target.value));
+  };
+  const onPickedAddOns = (id: number) => {
+    setPickedAddOns(prevState => {
+      if (prevState.includes(id)) return prevState.filter(item => item !== id);
+      return [...prevState, id];
+    });
   };
   const step = useSelector((state: RootState) => {
     return state.step;
@@ -73,8 +95,18 @@ const MultiStepFormContainer = () => {
             onPhoneChange={onPhoneChange}
           />
         )}
-        {step === 1 && <SelectPlanForm planObjs={planObjs} plan={plan} onChange={onPlanChange} />}
-        {step === 2 && <PickAddOnsForm />}
+        {step === 1 && (
+          <SelectPlanForm
+            planObjs={planObjs}
+            plan={plan}
+            onChange={onPlanChange}
+            duration={duration}
+            onDurationToggle={onDurationToggle}
+          />
+        )}
+        {step === 2 && (
+          <PickAddOnsForm addOnsObjs={addOnsObjs} pickedAddOns={pickedAddOns} onPickedAddOns={onPickedAddOns} />
+        )}
         {step === 3 && <FinishingUpForm />}
         {step === 4 && <SubscriptionCompleteCard />}
         {/*<StyledFooter>
@@ -90,12 +122,6 @@ const StyledFooter = styled(Footer)`
   outline: 3px solid blue;
 `;
 const NextButton = styled(Button)``;
-
-const Spacer = styled.div`
-  margin: 0 12px 12px 0;
-  position: relative;
-  background: yellow;
-`;
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -138,6 +164,7 @@ const StyledContainer = styled(Container)`
   left: 50%;
   transform: translate(-50%, 0%);
   background: var(--theme-white);
+  min-width: 343px;
   @media (min-width: 992px) {
     margin: 16px;
     position: absolute;
@@ -151,4 +178,4 @@ const StyledContainer = styled(Container)`
 `;
 
 export { MultiStepFormContainer };
-export type { IStepObj, IPlanObjs };
+export type { IStepObj, IPlanObj, IAddOnsObj };

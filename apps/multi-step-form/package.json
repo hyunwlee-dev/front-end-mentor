@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@front-end-mentor/hooks": "workspace:^",
     "@front-end-mentor/ui": "workspace:^",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.2.5",

@@ -1,3 +1,1 @@
-export const sayHook = () => {
-  return 'hello from hook';
-};
+export { useToggle } from './useToggle';
