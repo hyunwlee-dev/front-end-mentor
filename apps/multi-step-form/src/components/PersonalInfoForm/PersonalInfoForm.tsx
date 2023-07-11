@@ -1,4 +1,4 @@
-import { A11yHidden, Container, Input, Label } from '@front-end-mentor/ui';
+import { A11yHidden, Button, Container, Input, Label } from '@front-end-mentor/ui';
 import { styled } from 'styled-components';
 import { useId, HTMLAttributes } from 'react';
 import * as React from 'react';
@@ -10,9 +10,10 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
   onNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onPhoneChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  next: () => void;
 }
 
-const PersonalInfoForm: React.FC<IProps> = ({ username, email, phone, onNameChange, onEmailChange, onPhoneChange }) => {
+const PersonalInfoForm: React.FC<IProps> = ({ username, email, phone, onNameChange, onEmailChange, onPhoneChange, next }) => {
   const usernameId = useId();
   const emailAddressId = useId();
   const phoneNumberId = useId();
@@ -34,12 +35,34 @@ const PersonalInfoForm: React.FC<IProps> = ({ username, email, phone, onNameChan
         <StyledLabel htmlFor={phoneNumberId}>Phone Number</StyledLabel>
         <StyledInput id={phoneNumberId} value={phone} onChange={onPhoneChange} placeholder="e.g +1 234 567 890" />
       </Form>
+      <NextButton type='button' onClick={next}>Next step</NextButton>
     </StyledContainer>
   );
 };
 
+const NextButton = styled(Button)`
+  display: none;
+  border: 0;
+  width: 123px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--theme-white);
+  font: normal 500 16px / normal Ubuntu;
+  @media (min-width: 992px) {
+    display: inline-block;
+    position: absolute;
+    right: 110px;
+    bottom: 32px;
+    border-radius: 8px;
+    background: var(--theme-marine-blue);
+  }
+`;
+
 const StyledContainer = styled(Container)`
   padding: 32px 24px;
+  @media (min-width: 992px) {
+    width: 450px;
+  }
 `;
 
 const H2 = styled.h2`

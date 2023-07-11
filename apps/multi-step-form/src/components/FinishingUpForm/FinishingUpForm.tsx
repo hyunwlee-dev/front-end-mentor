@@ -11,9 +11,11 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
   pickedAddOns: number[];
   duration: boolean;
   jumpToPlan: () => void;
+  prev: () => void;
+  next: () => void;
 }
 
-const FinishingUpForm: React.FC<IProps> = ({ planObjs, addOnsObjs, duration, plan, pickedAddOns, jumpToPlan }) => {
+const FinishingUpForm: React.FC<IProps> = ({ planObjs, addOnsObjs, duration, plan, pickedAddOns, jumpToPlan, prev, next }) => {
   const subscriptionDate = duration ? 'yearly' : 'monthly';
   const planPrice = (price: number) => (duration ? price * 12 : price);
   const totalSum =
@@ -48,9 +50,55 @@ const FinishingUpForm: React.FC<IProps> = ({ planObjs, addOnsObjs, duration, pla
         <TotalInfo>Total (per month)</TotalInfo>
         <TotalPrice>+${totalSum}/mo</TotalPrice>
       </TotalBiling>
+      <PrevButton type='button' onClick={prev}>Go back</PrevButton>
+      <NextButton type='button' onClick={next}>Confirm</NextButton>
     </StyledContainer>
   );
 };
+
+
+const PrevButton = styled(Button)`
+  display: none;
+  border: 0;
+  width: 123px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--theme-cool-gray);
+  font: normal 500 16px / normal Ubuntu;
+  background: transparent;
+  @media (min-width: 992px) {
+    display: inline-block;
+    position: absolute;
+    left: 110px;
+    bottom: 32px;
+    border-radius: 8px;
+  }
+`;
+
+const NextButton = styled(Button)`
+  display: none;
+  border: 0;
+  width: 123px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--theme-white);
+  font: normal 500 16px / normal Ubuntu;
+  @media (min-width: 992px) {
+    display: inline-block;
+    position: absolute;
+    right: 110px;
+    bottom: 32px;
+    border-radius: 8px;
+    background: var(--theme-purplish-blue);
+  }
+`;
+
+const StyledContainer = styled(Container)`
+  padding: 32px 24px;
+  @media (min-width: 992px) {
+    width: 450px;
+  }
+`;
 
 const PickedPlanWrapper = styled.div`
   display: flex;
@@ -136,10 +184,6 @@ const TotalInfo = styled.span`
 const TotalPrice = styled.span`
   color: var(--theme-purplish-blue);
   font: normal 700 16px / 20px Ubuntu;
-`;
-
-const StyledContainer = styled(Container)`
-  padding: 32px 24px;
 `;
 
 const H2 = styled.h2`

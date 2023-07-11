@@ -12,9 +12,11 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   duration: boolean;
   onDurationToggle: () => void;
+  prev: () => void;
+  next: () => void;
 }
 
-const SelectPlanForm: React.FC<IProps> = ({ planObjs, plan, onChange, duration, onDurationToggle }) => {
+const SelectPlanForm: React.FC<IProps> = ({ planObjs, plan, onChange, duration, onDurationToggle, prev, next }) => {
   const durationId = useId();
   return (
     <StyledContainer>
@@ -45,9 +47,54 @@ const SelectPlanForm: React.FC<IProps> = ({ planObjs, plan, onChange, duration, 
           <Yearly active={duration === true ? 1 : 0}>yearly</Yearly>
         </DurationWrapper>
       </Form>
+      <PrevButton type='button' onClick={prev}>Go back</PrevButton>
+      <NextButton type='button' onClick={next}>Next step</NextButton>
     </StyledContainer>
   );
 };
+
+const PrevButton = styled(Button)`
+  display: none;
+  border: 0;
+  width: 123px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--theme-cool-gray);
+  font: normal 500 16px / normal Ubuntu;
+  background: transparent;
+  @media (min-width: 992px) {
+    display: inline-block;
+    position: absolute;
+    left: 110px;
+    bottom: 32px;
+    border-radius: 8px;
+  }
+`;
+
+const NextButton = styled(Button)`
+  display: none;
+  border: 0;
+  width: 123px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--theme-white);
+  font: normal 500 16px / normal Ubuntu;
+  @media (min-width: 992px) {
+    display: inline-block;
+    position: absolute;
+    right: 110px;
+    bottom: 32px;
+    border-radius: 8px;
+    background: var(--theme-marine-blue);
+  }
+`;
+
+const StyledContainer = styled(Container)`
+  padding: 32px 24px;
+  @media (min-width: 992px) {
+    width: 450px;
+  }
+`;
 
 const DurationWrapper = styled.div`
   border: 0;
@@ -160,10 +207,6 @@ const RadioButton = styled(Button)`
     border: 1px solid var(--theme-purplish-blue);
     background: #f8f9ff;
   }
-`;
-
-const StyledContainer = styled(Container)`
-  padding: 32px 24px;
 `;
 
 const H2 = styled.h2`

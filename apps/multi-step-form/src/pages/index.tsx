@@ -50,6 +50,9 @@ const Footer = styled.footer`
   height: 72px;
   flex: 0 0 auto;
   background: var(--theme-white);
+  @media (min-width: 992px) {
+    display: none;
+  }
 `;
 
 const ButtonWrapper = styled.div<{ step: number }>`

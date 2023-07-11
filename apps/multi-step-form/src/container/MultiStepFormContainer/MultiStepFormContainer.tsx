@@ -11,9 +11,8 @@ import {
 } from '@/components';
 import { RootState } from '@/store/store';
 import { ChangeEvent, useState } from 'react';
-import { Footer } from '@/components/Footer';
 import { useToggle } from '@front-end-mentor/hooks';
-import { jumpToPlanForm } from '@/store/slices/stepSlice';
+import { jumpToPlanForm, nextStep, previousStep } from '@/store/slices/stepSlice';
 
 interface IStepObj {
   step: number;
@@ -81,6 +80,8 @@ const MultiStepFormContainer = () => {
     return state.step;
   });
   const dispatch = useDispatch();
+  const prev = () => dispatch(previousStep());
+  const next = () => dispatch(nextStep());
   const jumpToPlan = () => dispatch(jumpToPlanForm());
   return (
     <StyledDiv>
@@ -94,6 +95,7 @@ const MultiStepFormContainer = () => {
             onNameChange={onNameChange}
             onEmailChange={onEmailChange}
             onPhoneChange={onPhoneChange}
+            next={next}
           />
         )}
         {step === 1 && (
@@ -103,10 +105,18 @@ const MultiStepFormContainer = () => {
             onChange={onPlanChange}
             duration={duration}
             onDurationToggle={onDurationToggle}
+            prev={prev}
+            next={next}
           />
         )}
         {step === 2 && (
-          <PickAddOnsForm addOnsObjs={addOnsObjs} pickedAddOns={pickedAddOns} onPickedAddOns={onPickedAddOns} />
+          <PickAddOnsForm 
+            addOnsObjs={addOnsObjs}
+            pickedAddOns={pickedAddOns}
+            onPickedAddOns={onPickedAddOns}
+            prev={prev}
+            next={next}
+          />
         )}
         {step === 3 && (
           <FinishingUpForm
@@ -116,23 +126,15 @@ const MultiStepFormContainer = () => {
             duration={duration}
             pickedAddOns={pickedAddOns}
             jumpToPlan={jumpToPlan}
+            prev={prev}
+            next={next}
           />
         )}
-        {step === 4 && <SubscriptionCompleteCard />}
-        {/*
-          <StyledFooter>
-            <NextButton onClick={() => dispatch(nextStep())}>테스트 버튼</NextButton>
-          </StyledFooter>
-          */}
+        {step === 4 && <SubscriptionCompleteCard prev={prev}/>}
       </StyledContainer>
     </StyledDiv>
   );
 };
-
-const StyledFooter = styled(Footer)`
-  outline: 3px solid blue;
-`;
-const NextButton = styled(Button)``;
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -185,6 +187,8 @@ const StyledContainer = styled(Container)`
     transform: none;
     width: 618px;
     height: 568px;
+    display: flex;
+    justify-content: center;
   }
 `;
 

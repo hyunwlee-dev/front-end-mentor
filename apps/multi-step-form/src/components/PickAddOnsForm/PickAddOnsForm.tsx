@@ -8,9 +8,11 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
   addOnsObjs: IAddOnsObj[];
   pickedAddOns: number[];
   onPickedAddOns: (id: number) => void;
+  prev: () => void;
+  next: () => void;
 }
 
-const PickAddOnsForm: React.FC<IProps> = ({ addOnsObjs, pickedAddOns, onPickedAddOns }) => {
+const PickAddOnsForm: React.FC<IProps> = ({ addOnsObjs, pickedAddOns, onPickedAddOns, prev, next }) => {
   return (
     <StyledContainer>
       <H2>Pick add-ons</H2>
@@ -37,12 +39,54 @@ const PickAddOnsForm: React.FC<IProps> = ({ addOnsObjs, pickedAddOns, onPickedAd
           </AddOnButton>
         ))}
       </Form>
+      <PrevButton type='button' onClick={prev}>Go back</PrevButton>
+      <NextButton type='button' onClick={next}>Next step</NextButton>
     </StyledContainer>
   );
 };
 
+
+const PrevButton = styled(Button)`
+  display: none;
+  border: 0;
+  width: 123px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--theme-cool-gray);
+  font: normal 500 16px / normal Ubuntu;
+  background: transparent;
+  @media (min-width: 992px) {
+    display: inline-block;
+    position: absolute;
+    left: 110px;
+    bottom: 32px;
+    border-radius: 8px;
+  }
+`;
+
+const NextButton = styled(Button)`
+  display: none;
+  border: 0;
+  width: 123px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--theme-white);
+  font: normal 500 16px / normal Ubuntu;
+  @media (min-width: 992px) {
+    display: inline-block;
+    position: absolute;
+    right: 110px;
+    bottom: 32px;
+    border-radius: 8px;
+    background: var(--theme-marine-blue);
+  }
+`;
+
 const StyledContainer = styled(Container)`
   padding: 32px 24px;
+  @media (min-width: 992px) {
+    width: 450px;
+  }
 `;
 
 const H2 = styled.h2`
