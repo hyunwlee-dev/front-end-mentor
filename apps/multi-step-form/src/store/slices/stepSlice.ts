@@ -10,8 +10,11 @@ const stepSlice = createSlice({
     previousStep: state => {
       return state - 1;
     },
+    jumpToPlanForm: _ => {
+      return 1;
+    },
   },
 });
 
 export default stepSlice;
-export const { nextStep, previousStep } = stepSlice.actions;
+export const { nextStep, previousStep, jumpToPlanForm } = stepSlice.actions;

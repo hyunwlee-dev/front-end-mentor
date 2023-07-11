@@ -33,7 +33,7 @@ const PickAddOnsForm: React.FC<IProps> = ({ addOnsObjs, pickedAddOns, onPickedAd
             />
             <AddOnLabel htmlFor={addOnsObj.main}>{addOnsObj.main}</AddOnLabel>
             <Sub>{addOnsObj.sub}</Sub>
-            <Info>{addOnsObj.info}</Info>
+            <Info>{`+\$${addOnsObj.price}/mo`}</Info>
           </AddOnButton>
         ))}
       </Form>

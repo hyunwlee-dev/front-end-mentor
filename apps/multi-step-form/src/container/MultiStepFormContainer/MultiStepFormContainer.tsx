@@ -9,11 +9,11 @@ import {
   FinishingUpForm,
   SubscriptionCompleteCard,
 } from '@/components';
-import { nextStep } from '@/store/slices/stepSlice';
 import { RootState } from '@/store/store';
 import { ChangeEvent, useState } from 'react';
 import { Footer } from '@/components/Footer';
 import { useToggle } from '@front-end-mentor/hooks';
+import { jumpToPlanForm } from '@/store/slices/stepSlice';
 
 interface IStepObj {
   step: number;
@@ -23,14 +23,14 @@ interface IStepObj {
 interface IPlanObj {
   id: number;
   name: string;
-  info: string;
+  price: number;
 }
 
 interface IAddOnsObj {
   id: number;
   main: string;
   sub: string;
-  info: string;
+  price: number;
 }
 
 const stepObjs = [
@@ -41,15 +41,15 @@ const stepObjs = [
 ];
 
 const planObjs = [
-  { id: 0, name: 'arcade', info: '$9/mo' },
-  { id: 1, name: 'advanced', info: '$12/mo' },
-  { id: 2, name: 'pro', info: '$15/mo' },
+  { id: 0, name: 'arcade', price: 9 },
+  { id: 1, name: 'advanced', price: 12 },
+  { id: 2, name: 'pro', price: 15 },
 ];
 
 const addOnsObjs = [
-  { id: 0, main: 'Online service', sub: 'Access to multiplayer games', info: '+$1/mo' },
-  { id: 1, main: 'Larger storage', sub: 'Extra 1TB of cloud save', info: '+$2/mo' },
-  { id: 2, main: 'Customizable profile', sub: 'Custom theme on your profile', info: '+$2/mo' },
+  { id: 0, main: 'Online service', sub: 'Access to multiplayer games', price: 1 },
+  { id: 1, main: 'Larger storage', sub: 'Extra 1TB of cloud save', price: 2 },
+  { id: 2, main: 'Customizable profile', sub: 'Custom theme on your profile', price: 2 },
 ];
 
 const MultiStepFormContainer = () => {
@@ -81,6 +81,7 @@ const MultiStepFormContainer = () => {
     return state.step;
   });
   const dispatch = useDispatch();
+  const jumpToPlan = () => dispatch(jumpToPlanForm());
   return (
     <StyledDiv>
       <StyledHeader stepObjs={stepObjs} step={step} />
@@ -107,12 +108,22 @@ const MultiStepFormContainer = () => {
         {step === 2 && (
           <PickAddOnsForm addOnsObjs={addOnsObjs} pickedAddOns={pickedAddOns} onPickedAddOns={onPickedAddOns} />
         )}
-        {step === 3 && <FinishingUpForm />}
+        {step === 3 && (
+          <FinishingUpForm
+            planObjs={planObjs}
+            addOnsObjs={addOnsObjs}
+            plan={plan}
+            duration={duration}
+            pickedAddOns={pickedAddOns}
+            jumpToPlan={jumpToPlan}
+          />
+        )}
         {step === 4 && <SubscriptionCompleteCard />}
-        {/*<StyledFooter>
-        <NextButton onClick={() => dispatch(nextStep())}>테스트 버튼</NextButton>
-      </StyledFooter>
-      */}
+        {/*
+          <StyledFooter>
+            <NextButton onClick={() => dispatch(nextStep())}>테스트 버튼</NextButton>
+          </StyledFooter>
+          */}
       </StyledContainer>
     </StyledDiv>
   );

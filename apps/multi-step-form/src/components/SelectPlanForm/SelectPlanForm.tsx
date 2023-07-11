@@ -34,7 +34,7 @@ const SelectPlanForm: React.FC<IProps> = ({ planObjs, plan, onChange, duration, 
             <Label htmlFor={planObj.name}>
               <Image src={`/icons/icon-${planObj.name}.svg`} alt={planObj.name} width={40} height={40} />
               <span>{planObj.name}</span>
-              <span>{planObj.info}</span>
+              <span>{`\$${planObj.price}/mo`}</span>
             </Label>
           </RadioButton>
         ))}
