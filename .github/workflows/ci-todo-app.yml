@@ -28,4 +28,3 @@ jobs:
         working-directory: apps/todo-app-main
         run: |
           yarn build
-
