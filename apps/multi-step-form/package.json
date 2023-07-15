@@ -10,11 +10,14 @@
   },
   "dependencies": {
     "@front-end-mentor/hooks": "workspace:^",
+    "@front-end-mentor/lib": "workspace:^",
     "@front-end-mentor/ui": "workspace:^",
+    "@front-end-mentor/utils": "workspace:^",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.4",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
     "next": "13.4.4",
@@ -22,6 +25,6 @@
     "react-dom": "18.2.0",
     "react-redux": "^8.1.1",
     "styled-components": "^6.0.0-rc.3",
-    "typescript": "5.1.3"
+    "typescript": "^5.1.6"
   }
 }
