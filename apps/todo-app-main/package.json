@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && aws s3 sync build s3://s3-deploy-cicd-frontendmentor --delete",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint --fix --ext .ts,.tsx ./src",
     "prettier:fix": "prettier ./src --write",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
+    "deploy": "next build && aws s3 sync build s3://s3-deploy-cicd-frontendmentor --delete",
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
