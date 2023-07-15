@@ -1,11 +1,11 @@
+import { A11yHidden, Button, Container } from '@front-end-mentor/ui';
 import type { NextPage } from 'next';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { styled } from 'styled-components';
 import { MultiStepFormContainer } from '@/container';
-import { A11yHidden, Button, Container } from '@front-end-mentor/ui';
-import { useDispatch } from 'react-redux';
 import { nextStep, previousStep } from '@/store/slices/stepSlice';
 import { RootState } from '@/store/store';
-import { useSelector } from 'react-redux';
 
 const Home: NextPage = () => {
   const step = useSelector((state: RootState) => {

@@ -1,7 +1,7 @@
 import { Button, Container } from '@front-end-mentor/ui';
 import { HTMLAttributes } from 'react';
-import { styled } from 'styled-components';
 import * as React from 'react';
+import { styled } from 'styled-components';
 import { IAddOnsObj, IPlanObj } from '@/container/MultiStepFormContainer/MultiStepFormContainer';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
@@ -33,15 +33,15 @@ const FinishingUpForm: React.FC<IProps> = ({ planObjs, addOnsObjs, duration, pla
               Change
             </ChangePart>
           </PlanInfo>
-          <PlanPrice>{`\$${planPrice(planObjs[plan].price)}/mo`}</PlanPrice>
+          <PlanPrice>{`$${planPrice(planObjs[plan].price)}/mo`}</PlanPrice>
         </PickedPlanWrapper>
         <PickedAddOnsWrapper>
           {pickedAddOns
             .sort((a, b) => a - b)
             .map(addOn => (
-              <AddOnWrapper>
+              <AddOnWrapper key={addOnsObjs[addOn].main}>
                 <AddOnInfo>{addOnsObjs[addOn].main}</AddOnInfo>
-                <AddOnPrice>{`+\$${addOnsObjs[addOn].price}/mo`}</AddOnPrice>
+                <AddOnPrice>{`+$${addOnsObjs[addOn].price}/mo`}</AddOnPrice>
               </AddOnWrapper>
             ))}
         </PickedAddOnsWrapper>

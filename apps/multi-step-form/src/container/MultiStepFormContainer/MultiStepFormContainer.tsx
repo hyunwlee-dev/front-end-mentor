@@ -1,4 +1,6 @@
-import { Button, Container } from '@front-end-mentor/ui';
+import { useToggle } from '@front-end-mentor/hooks';
+import { Container } from '@front-end-mentor/ui';
+import { ChangeEvent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { styled } from 'styled-components';
 import {
@@ -9,10 +11,8 @@ import {
   FinishingUpForm,
   SubscriptionCompleteCard,
 } from '@/components';
-import { RootState } from '@/store/store';
-import { ChangeEvent, useState } from 'react';
-import { useToggle } from '@front-end-mentor/hooks';
 import { jumpToPlanForm, nextStep, previousStep } from '@/store/slices/stepSlice';
+import { RootState } from '@/store/store';
 
 interface IStepObj {
   step: number;
@@ -72,7 +72,7 @@ const MultiStepFormContainer = () => {
   };
   const onPickedAddOns = (id: number) => {
     setPickedAddOns(prevState => {
-      if (prevState.includes(id)) return prevState.filter(item => item !== id);
+      if (prevState.includes(id)) {return prevState.filter(item => item !== id);}
       return [...prevState, id];
     });
   };

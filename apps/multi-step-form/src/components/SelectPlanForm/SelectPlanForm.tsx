@@ -1,10 +1,10 @@
 import { A11yHidden, Input, Label, Button, Container } from '@front-end-mentor/ui';
-import { HTMLAttributes } from 'react';
-import { styled } from 'styled-components';
-import * as React from 'react';
-import { IPlanObjs } from '@/container/MultiStepFormContainer';
 import Image from 'next/image';
+import { HTMLAttributes } from 'react';
+import * as React from 'react';
 import { useId, ChangeEvent } from 'react';
+import { styled } from 'styled-components';
+import { IPlanObjs } from '@/container/MultiStepFormContainer';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   planObjs: IPlanObjs[];
@@ -36,7 +36,7 @@ const SelectPlanForm: React.FC<IProps> = ({ planObjs, plan, onChange, duration, 
             <Label htmlFor={planObj.name}>
               <Image src={`/icons/icon-${planObj.name}.svg`} alt={planObj.name} width={40} height={40} />
               <span>{planObj.name}</span>
-              <span>{`\$${planObj.price}/mo`}</span>
+              <span>{`$${planObj.price}/mo`}</span>
             </Label>
           </RadioButton>
         ))}

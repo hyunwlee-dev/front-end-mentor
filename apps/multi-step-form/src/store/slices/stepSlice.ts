@@ -10,7 +10,7 @@ const stepSlice = createSlice({
     previousStep: state => {
       return state - 1;
     },
-    jumpToPlanForm: _ => {
+    jumpToPlanForm: () => {
       return 1;
     },
   },

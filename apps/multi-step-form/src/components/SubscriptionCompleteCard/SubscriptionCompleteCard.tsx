@@ -1,8 +1,8 @@
 import { A11yHidden, Button, Container } from '@front-end-mentor/ui';
-import { styled } from 'styled-components';
 import Image from 'next/image';
 import { HTMLAttributes } from 'react';
 import * as React from 'react';
+import { styled } from 'styled-components';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   prev: () => void;

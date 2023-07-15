@@ -1,8 +1,8 @@
-import { IAddOnsObj } from '@/container/MultiStepFormContainer/MultiStepFormContainer';
 import { Button, Container, Input, Label } from '@front-end-mentor/ui';
 import { HTMLAttributes } from 'react';
-import { styled } from 'styled-components';
 import * as React from 'react';
+import { styled } from 'styled-components';
+import { IAddOnsObj } from '@/container/MultiStepFormContainer/MultiStepFormContainer';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   addOnsObjs: IAddOnsObj[];
@@ -35,7 +35,7 @@ const PickAddOnsForm: React.FC<IProps> = ({ addOnsObjs, pickedAddOns, onPickedAd
             />
             <AddOnLabel htmlFor={addOnsObj.main}>{addOnsObj.main}</AddOnLabel>
             <Sub>{addOnsObj.sub}</Sub>
-            <Info>{`+\$${addOnsObj.price}/mo`}</Info>
+            <Info>{`+$${addOnsObj.price}/mo`}</Info>
           </AddOnButton>
         ))}
       </Form>
