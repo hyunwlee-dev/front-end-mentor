@@ -172,6 +172,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.45.0"],\
             ["eslint-config-next", "virtual:df81657f5c483e107708ed736510abec0d1b85ebc53a161309496052467c38d95f9625555d433dc78017cc70bc1bf56a4886550067dbfa77acc2902aca2dc264#npm:13.4.10"],\
             ["next", "virtual:df81657f5c483e107708ed736510abec0d1b85ebc53a161309496052467c38d95f9625555d433dc78017cc70bc1bf56a4886550067dbfa77acc2902aca2dc264#npm:13.4.10"],\
+            ["prettier", "npm:3.0.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:df81657f5c483e107708ed736510abec0d1b85ebc53a161309496052467c38d95f9625555d433dc78017cc70bc1bf56a4886550067dbfa77acc2902aca2dc264#npm:18.2.0"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
