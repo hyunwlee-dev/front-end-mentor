@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         {sayHello()}
-        {/*<Button>I'm Button from ui</Button>*/}
+        <Button>I'm Button from ui</Button>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
