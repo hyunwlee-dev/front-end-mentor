@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hyunwlee/lib": "workspace:^",
+    "@hyunwlee/ui": "workspace:^",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",

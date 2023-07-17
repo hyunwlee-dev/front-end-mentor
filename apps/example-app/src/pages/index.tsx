@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { sayHello } from '@hyunwlee/lib'
+import { Button } from '@hyunwlee/ui'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         {sayHello()}
+        {/*<Button>I'm Button from ui</Button>*/}
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
