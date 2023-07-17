@@ -18,12 +18,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@hyunwlee/example-app",\
         "reference": "workspace:apps/example-app"\
+      },\
+      {\
+        "name": "@hyunwlee/lib",\
+        "reference": "workspace:packages/lib"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["@hyunwlee/example-app", ["workspace:apps/example-app"]],\
+      ["@hyunwlee/lib", ["workspace:packages/lib"]],\
       ["front-end-mentor", ["workspace:."]]\
     ],\
     "fallbackPool": [\
@@ -151,6 +156,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./apps/example-app/",\
           "packageDependencies": [\
             ["@hyunwlee/example-app", "workspace:apps/example-app"],\
+            ["@hyunwlee/lib", "workspace:packages/lib"],\
             ["@types/node", "npm:20.4.2"],\
             ["@types/react", "npm:18.2.15"],\
             ["@types/react-dom", "npm:18.2.7"],\
@@ -159,6 +165,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:df81657f5c483e107708ed736510abec0d1b85ebc53a161309496052467c38d95f9625555d433dc78017cc70bc1bf56a4886550067dbfa77acc2902aca2dc264#npm:13.4.10"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:df81657f5c483e107708ed736510abec0d1b85ebc53a161309496052467c38d95f9625555d433dc78017cc70bc1bf56a4886550067dbfa77acc2902aca2dc264#npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@hyunwlee/lib", [\
+        ["workspace:packages/lib", {\
+          "packageLocation": "./packages/lib/",\
+          "packageDependencies": [\
+            ["@hyunwlee/lib", "workspace:packages/lib"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\
           "linkType": "SOFT"\
