@@ -115,7 +115,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hyunwlee/type@workspace:packages/type":
+"@hyunwlee/type@workspace:^, @hyunwlee/type@workspace:packages/type":
   version: 0.0.0-use.local
   resolution: "@hyunwlee/type@workspace:packages/type"
   dependencies:
@@ -130,6 +130,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyunwlee/ui@workspace:packages/ui"
   dependencies:
+    "@hyunwlee/type": "workspace:^"
     "@types/node": ^20.4.2
     "@types/react": ^18.2.15
     "@types/react-dom": ^18.2.7

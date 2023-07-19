@@ -1,9 +1,9 @@
+import { sayHello } from '@hyunwlee/lib'
+import { A11yHidden, Button, Container, Input, Label } from '@hyunwlee/ui'
+import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import { sayHello } from '@hyunwlee/lib'
-import { Button } from '@hyunwlee/ui'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +18,11 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         {sayHello()}
+        <A11yHidden as='h1'>monorepo test(you can see me?)</A11yHidden>
+        <Container>I'm Container from ui</Container>
         <Button>I'm Button from ui</Button>
+        <Label htmlFor='hi'>I'm Label from ui</Label>
+        <Input id='hi' type="text" value="I'm Input from ui (read only)" readOnly style={{textAlign: 'center'}}></Input>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
