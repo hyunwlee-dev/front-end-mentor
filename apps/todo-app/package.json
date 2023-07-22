@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "yarn dlx serve ./build/",
     "lint": "next lint",
     "lint:fix": "eslint --fix --ext .ts,.tsx ./src",
     "prettier:fix": "prettier ./src --write",
