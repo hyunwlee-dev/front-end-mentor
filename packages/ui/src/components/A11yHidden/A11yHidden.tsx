@@ -12,6 +12,7 @@ type A11yHiddenComponent = <C extends React.ElementType = 'span'>(
   Props: A11yHiddenProps<C>
 ) => React.ReactElement | null;
 
+// @ts-ignore
 const A11yHidden: A11yHiddenComponent = React.forwardRef(
   <T extends React.ElementType = 'span'>({ as, children }: A11yHiddenProps<T>, ref: PolymorphicRef<T>['ref']) => {
     const Element = as || 'span';

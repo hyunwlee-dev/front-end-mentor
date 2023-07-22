@@ -11,6 +11,8 @@ type InputProps<T extends React.ElementType = 'input'> = PolymorphicProps<
 >;
 
 type InputComponent = <C extends React.ElementType = 'input'>(Props: InputProps<C>) => React.ReactElement | null;
+
+// @ts-ignore
 const Input: InputComponent = React.forwardRef(
   <T extends React.ElementType = 'input'>(
     { as, className = '', id, type = 'text', ...restProps }: InputProps<T>,

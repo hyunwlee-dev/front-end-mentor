@@ -12,6 +12,7 @@ type LabelProps<T extends React.ElementType = 'label'> = PolymorphicProps<
 
 type LabelComponent = <C extends React.ElementType = 'label'>(Props: LabelProps<C>) => React.ReactElement | null;
 
+// @ts-ignore
 const Label: LabelComponent = React.forwardRef(
   <T extends React.ElementType = 'label'>(
     { as, className = '', htmlFor, children, ...restProps }: LabelProps<T>,

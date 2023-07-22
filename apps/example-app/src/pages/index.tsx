@@ -19,9 +19,9 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         {sayHello()}
         <A11yHidden as='h1'>monorepo test(you can see me?)</A11yHidden>
-        <Container>I'm Container from ui</Container>
-        <Button>I'm Button from ui</Button>
-        <Label htmlFor='hi'>I'm Label from ui</Label>
+        <Container>{"I'm Container from ui"}</Container>
+        <Button>{"I'm Button from ui"}</Button>
+        <Label htmlFor='hi'>{"I'm Label from ui"}</Label>
         <Input id='hi' type="text" value="I'm Input from ui (read only)" readOnly style={{textAlign: 'center'}}></Input>
         <div className={styles.description}>
           <p>

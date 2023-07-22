@@ -11,6 +11,7 @@ type ButtonProps<T extends React.ElementType = 'button'> = PolymorphicProps<
 
 type ButtonComponent = <C extends React.ElementType = 'button'>(Props: ButtonProps<C>) => React.ReactElement | null;
 
+// @ts-ignore
 const Button: ButtonComponent = React.forwardRef(
   <T extends React.ElementType = 'button'>(
     { as, className = '', children, ...restProps }: ButtonProps<T>,
