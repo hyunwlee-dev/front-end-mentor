@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { PolymorphicProps, PolymorphicRef } from '@hyunwlee/type';
+=======
+import { PolymorphicProps, PolymorphicRef } from '@front-end-mentor/types';
+>>>>>>> previous/develop/multi-step-form
 import * as React from 'react';
 
 type A11yHiddenProps<T extends React.ElementType = 'span'> = PolymorphicProps<
@@ -12,9 +16,14 @@ type A11yHiddenComponent = <C extends React.ElementType = 'span'>(
   Props: A11yHiddenProps<C>
 ) => React.ReactElement | null;
 
+<<<<<<< HEAD
 // @ts-ignore
 const A11yHidden: A11yHiddenComponent = React.forwardRef(
   <T extends React.ElementType = 'span'>({ as, children }: A11yHiddenProps<T>, ref: PolymorphicRef<T>['ref']) => {
+=======
+const A11yHidden: A11yHiddenComponent = React.forwardRef(
+  <T extends React.ElementType = 'span'>({ as, children }: A11yHiddenProps<T>, ref: PolymorphicRef<T>) => {
+>>>>>>> previous/develop/multi-step-form
     const Element = as || 'span';
     return (
       <Element
