@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "@hyunwlee/lib",
   "version": "1.0.0",
   "private": true,
@@ -7,15 +6,5 @@
   "packageManager": "yarn@3.6.1",
   "dependencies": {
     "typescript": "^5.1.6"
-=======
-  "name": "@front-end-mentor/lib",
-  "packageManager": "yarn@3.5.1",
-  "main": "./src/index.ts",
-  "scripts": {
-    "typecheck": "tsc --project ./tsconfig.json --noEmit"
-  },
-  "dependencies": {
-    "typescript": "^5.0.4"
->>>>>>> previous/develop/multi-step-form
   }
 }

@@ -1,20 +1,13 @@
 {
-<<<<<<< HEAD
   "name": "@hyunwlee/ui",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
   "packageManager": "yarn@3.6.1",
-=======
-  "name": "@front-end-mentor/ui",
-  "packageManager": "yarn@3.5.1",
-  "main": "./src/index.ts",
->>>>>>> previous/develop/multi-step-form
   "scripts": {
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@types/node": "^20.4.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -24,16 +17,5 @@
   },
   "dependencies": {
     "@hyunwlee/type": "workspace:^"
-=======
-    "@types/node": "^20.2.5",
-    "@types/react": "^18.2.7",
-    "@types/react-dom": "^18.2.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.0.4"
-  },
-  "dependencies": {
-    "@front-end-mentor/types": "workspace:^"
->>>>>>> previous/develop/multi-step-form
   }
 }
