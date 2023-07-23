@@ -4,10 +4,10 @@ import { HTMLAttributes } from 'react';
 import * as React from 'react';
 import { useId, ChangeEvent } from 'react';
 import { styled } from 'styled-components';
-import { IPlanObjs } from '@/container/MultiStepFormContainer';
+import { IPlanObj } from '@/container/MultiStepFormContainer'
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
-  planObjs: IPlanObjs[];
+  planObjs: IPlanObj[];
   plan: number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   duration: boolean;

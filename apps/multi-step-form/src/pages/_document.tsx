@@ -1,4 +1,4 @@
-import { DefaultHead } from '@front-end-mentor/ui';
+import { DefaultHead } from '@hyunwlee/ui';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {

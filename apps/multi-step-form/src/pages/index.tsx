@@ -1,4 +1,4 @@
-import { A11yHidden, Button, Container } from '@front-end-mentor/ui';
+import { A11yHidden, Button, Container } from '@hyunwlee/ui';
 import type { NextPage } from 'next';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';

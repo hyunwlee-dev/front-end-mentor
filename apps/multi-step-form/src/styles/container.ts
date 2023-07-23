@@ -1,4 +1,4 @@
-import { Container } from '@front-end-mentor/ui';
+import { Container } from '@hyunwlee/ui';
 import { styled } from 'styled-components';
 
 const StyledContainer = styled(Container)`

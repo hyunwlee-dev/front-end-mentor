@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   compiler: { styledComponents: true },
-  transpilePackages: ['@hyunwlee/ui'],
+  transpilePackages: ['@hyunwlee/hook', '@hyunwlee/ui'],
   distDir: 'build',
   output: 'export',
   images: {
