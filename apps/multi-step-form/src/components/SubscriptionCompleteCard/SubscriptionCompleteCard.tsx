@@ -1,4 +1,4 @@
-import { A11yHidden, Button, Container } from '@front-end-mentor/ui';
+import { A11yHidden, Button, Container } from '@hyunwlee/ui';
 import Image from 'next/image';
 import { HTMLAttributes } from 'react';
 import * as React from 'react';

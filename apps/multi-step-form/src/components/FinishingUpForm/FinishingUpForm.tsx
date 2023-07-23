@@ -1,4 +1,4 @@
-import { Button, Container } from '@front-end-mentor/ui';
+import { Button, Container } from '@hyunwlee/ui';
 import { HTMLAttributes } from 'react';
 import * as React from 'react';
 import { styled } from 'styled-components';

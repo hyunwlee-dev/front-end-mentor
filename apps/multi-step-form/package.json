@@ -1,5 +1,5 @@
 {
-  "name": "@front-end-mentor/multi-step-form",
+  "name": "@hyunwlee/multi-step-form",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@front-end-mentor/hooks": "workspace:^",
-    "@front-end-mentor/lib": "workspace:^",
-    "@front-end-mentor/ui": "workspace:^",
-    "@front-end-mentor/utils": "workspace:^",
+    "@hyunwlee/ui": "workspace:^",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",

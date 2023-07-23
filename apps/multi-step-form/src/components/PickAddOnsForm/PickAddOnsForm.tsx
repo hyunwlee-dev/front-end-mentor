@@ -1,4 +1,4 @@
-import { Button, Container, Input, Label } from '@front-end-mentor/ui';
+import { Button, Container, Input, Label } from '@hyunwlee/ui';
 import { HTMLAttributes } from 'react';
 import * as React from 'react';
 import { styled } from 'styled-components';
