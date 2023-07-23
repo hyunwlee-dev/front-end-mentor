@@ -9,7 +9,7 @@ type ContainerProps<T extends React.ElementType> = PolymorphicProps<
   }
 >;
 
-type ContainerComponent = <T extends React.ElementType = 'div'>(props: ContainerProps<T>) => React.ReactElement | null;
+type ContainerComponent = <C extends React.ElementType = 'div'>(props: ContainerProps<C>) => React.ReactElement | null;
 
 // @ts-ignore
 const Container: ContainerComponent = forwardRef(
