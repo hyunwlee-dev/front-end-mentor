@@ -20,6 +20,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:apps/example-app"\
       },\
       {\
+        "name": "@hyunwlee/hook",\
+        "reference": "workspace:packages/hook"\
+      },\
+      {\
         "name": "@hyunwlee/lib",\
         "reference": "workspace:packages/lib"\
       },\
@@ -36,6 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["@hyunwlee/example-app", ["workspace:apps/example-app"]],\
+      ["@hyunwlee/hook", ["workspace:packages/hook"]],\
       ["@hyunwlee/lib", ["workspace:packages/lib"]],\
       ["@hyunwlee/type", ["workspace:packages/type"]],\
       ["@hyunwlee/ui", ["workspace:packages/ui"]],\
@@ -184,6 +189,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-next", "virtual:df81657f5c483e107708ed736510abec0d1b85ebc53a161309496052467c38d95f9625555d433dc78017cc70bc1bf56a4886550067dbfa77acc2902aca2dc264#npm:13.4.10"],\
             ["next", "virtual:df81657f5c483e107708ed736510abec0d1b85ebc53a161309496052467c38d95f9625555d433dc78017cc70bc1bf56a4886550067dbfa77acc2902aca2dc264#npm:13.4.10"],\
             ["prettier", "npm:3.0.0"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:82f8b02027ff65b776f0d80b75be42b098e1d4668e51364aec777aa993e77d14ac567790682ca0cf195b7ff4f25d50003846592bf6c6616daae4bb12264dbe5a#npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@hyunwlee/hook", [\
+        ["workspace:packages/hook", {\
+          "packageLocation": "./packages/hook/",\
+          "packageDependencies": [\
+            ["@hyunwlee/hook", "workspace:packages/hook"],\
+            ["@types/node", "npm:20.4.4"],\
+            ["@types/react", "npm:18.2.15"],\
+            ["@types/react-dom", "npm:18.2.7"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:82f8b02027ff65b776f0d80b75be42b098e1d4668e51364aec777aa993e77d14ac567790682ca0cf195b7ff4f25d50003846592bf6c6616daae4bb12264dbe5a#npm:18.2.0"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
@@ -418,6 +438,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-20.4.2-0b33863e43-99e544ea75.zip/node_modules/@types/node/",\
           "packageDependencies": [\
             ["@types/node", "npm:20.4.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:20.4.4", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-20.4.4-6c302e7a15-43f3c4a8ac.zip/node_modules/@types/node/",\
+          "packageDependencies": [\
+            ["@types/node", "npm:20.4.4"]\
           ],\
           "linkType": "HARD"\
         }]\
