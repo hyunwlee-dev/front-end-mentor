@@ -1,0 +1,1 @@
+export { getAllArtData } from './arts';

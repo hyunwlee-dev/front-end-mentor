@@ -10,12 +10,12 @@
 /* 사용자 정의 스타일 */
 @layer base {
   [hidden] {
-	  @apply hidden;
-	}
-  html, body {
-    @apply
-      font-libre-baskervill
-      text-[16px]
+    @apply hidden;
+  }
+  html,
+  body {
+    @apply font-libre-baskervill
+      text-[16px];
   }
 }
 
