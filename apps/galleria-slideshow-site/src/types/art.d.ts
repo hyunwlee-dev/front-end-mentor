@@ -1,5 +1,5 @@
 type Art = {
-  id?: string;
+  id: string;
   name: string;
   year: number;
   description: string;
@@ -38,6 +38,6 @@ type Art = {
     gallery: {
       width: number;
       height: number;
-    }
+    };
   };
 };

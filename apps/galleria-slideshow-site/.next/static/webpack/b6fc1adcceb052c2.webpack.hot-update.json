@@ -1,0 +1,24 @@
+{
+  "c": ["pages/gallery/[id]", "webpack"],
+  "r": ["pages/index"],
+  "m": [
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/build/polyfills/process.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=%2Fhome%2Fhyunwlee%2FProjects%2Ffront-end-mentor%2Fapps%2Fgalleria-slideshow-site%2Fsrc%2Fpages%2Findex.tsx&page=%2F!",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/client/get-domain-locale.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/client/image.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/client/link.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/client/use-intersection.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/compiled/buffer/index.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/compiled/micromatch/index.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/compiled/path-browserify/index.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/compiled/process/browser.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/compiled/util/util.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/shared/lib/app-router-context.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/dist/shared/lib/match-remote-pattern.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/image.js",
+    "../../.yarn/__virtual__/next-virtual-166a536635/0/cache/next-npm-12.3.4-cdaf2db0a7-d96fc4f5bc.zip/node_modules/next/link.js",
+    "./src/components/Header.tsx",
+    "./src/components/Logo.tsx",
+    "./src/pages/index.tsx"
+  ]
+}
