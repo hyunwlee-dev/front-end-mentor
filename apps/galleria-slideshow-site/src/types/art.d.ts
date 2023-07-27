@@ -16,4 +16,28 @@ type Art = {
     };
     gallery: string;
   };
+  sizes: {
+    artist: {
+      width: number;
+      height: number;
+    };
+    thumbnail: {
+      width: number;
+      height: number;
+    };
+    hero: {
+      small: {
+        width: number;
+        height: number;
+      };
+      large: {
+        width: number;
+        height: number;
+      };
+    };
+    gallery: {
+      width: number;
+      height: number;
+    }
+  };
 };

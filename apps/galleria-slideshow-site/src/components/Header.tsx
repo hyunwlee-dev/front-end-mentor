@@ -1,5 +1,4 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
-import { Logo } from './Logo';
 
 interface IProps extends HTMLAttributes<HTMLHeadElement> {
   className?: string;
