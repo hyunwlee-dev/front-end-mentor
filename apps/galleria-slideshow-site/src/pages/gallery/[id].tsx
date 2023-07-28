@@ -1,9 +1,15 @@
 import Image from 'next/image';
 import { getAllArtIds, getArt } from '@/utils';
 import { BaseLayout } from '@/components';
-import { Button, Container } from '@hyunwlee/ui';
+import { Button, Container, ProgressBar } from '@hyunwlee/ui';
+import * as React from 'react';
+import data from '@/db/data.json';
 
-const Gallery = ({ artData }: { artData: Art }) => {
+interface IArtData extends Art {
+  index: number;
+}
+
+const Gallery = ({ artData }: { artData: IArtData}) => {
   return (
     <>
       <BaseLayout>
@@ -44,11 +50,21 @@ const Gallery = ({ artData }: { artData: Art }) => {
         <section className="text-dark-gray mt-32 px-10 py-20 relative">
           <span className="text-9xl text-light-gray font-bold absolute top-0 right-10 -z-10">{artData.year}</span>
           <p className="text-xl leading-9 font-bold">{artData.description}</p>
-          <a className="inline-block text-sm px-5 py-20 uppercase underline" href={artData.source}>
+          <a className="inline-block text-sm px-5 pt-20 uppercase underline" href={artData.source}>
             go to source
           </a>
         </section>
-        <footer></footer>
+        <footer className='px-10 pb-32 relative'>
+          <ProgressBar className='h-[2px] w-auto bg-med-gray [&>div]:h-[2px] [&>div]:bg-black' completed={((artData.index + 1) / data.length * 100)}/>
+          <span className='text-2xl absolute top-8'>{artData.name}</span>
+          <span className='text-sm absolute top-20'>{artData.artist.name}</span>
+          <Button className='absolute top-14 right-24'>
+            <Image src='/shared/icon-back-button.svg' width={24} height={24} alt='slide back button'/>
+          </Button>
+          <Button className='absolute top-14 right-10'>
+            <Image src='/shared/icon-next-button.svg' width={24} height={24} alt='slide next button'/>
+          </Button>
+        </footer>
       </BaseLayout>
     </>
   );

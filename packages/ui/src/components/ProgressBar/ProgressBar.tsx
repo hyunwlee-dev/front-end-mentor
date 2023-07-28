@@ -10,7 +10,7 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
 const ProgressBar: React.FC<IProps> = ({ className, completed, isVisibleAmount = false }) => {
   return (
     <div className={className}>
-      <div style={{ width: `${completed}px` }}>{isVisibleAmount && <span>{`${completed}%`}</span>}</div>
+      <div style={{ width: `${completed}%` }}>{isVisibleAmount && <span>{`${completed}%`}</span>}</div>
     </div>
   );
 };

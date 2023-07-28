@@ -27,7 +27,7 @@ const getAllArtIds = (): Promise<IArtIds[]> => {
 };
 
 const getArt = async (id: string) => {
-  const art = data.filter(item => item.name.toLowerCase().replaceAll(' ', '-') === id);
+  const art = data.map((item, index)=> ({...item, index})).filter(item => item.name.toLowerCase().replaceAll(' ', '-') === id);
   return new Promise(function (resolve) {
     setTimeout(() => resolve(art[0]), 500);
   });
