@@ -1,5 +1,4 @@
-import { Header } from '@/components/Header';
-import { Logo } from '@/components/Logo';
+import { BaseLayout } from '@/components';
 import { getAllArtData, sortMansonryArray } from '@/utils';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,11 +6,8 @@ import Link from 'next/link';
 export default function Home({ artList }: { artList: Art[] }) {
   return (
     <>
-      <Header className="border border-solid border-med-gray">
-        <Logo className="p-4 flex flex-row, flex-nowrap justify-between" />
-      </Header>
-      <main>
-        <ul className="p-4 columns-1 mobile:columns-2 tablet:columns-3 desktop:columns-4 cursor-pointer">
+      <BaseLayout>
+        <ul className="p-10 desktop:pt-10 desktop:p-0 columns-1 mobile:columns-2 tablet:columns-3 desktop:columns-4 cursor-pointer">
           {artList?.map(art => (
             <Link href={`/gallery/${art.id}`} key={art.id}>
               <li className={'relative mb-3'}>
@@ -27,7 +23,7 @@ export default function Home({ artList }: { artList: Art[] }) {
             </Link>
           ))}
         </ul>
-      </main>
+      </BaseLayout>
     </>
   );
 }

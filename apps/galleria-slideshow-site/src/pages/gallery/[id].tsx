@@ -1,16 +1,25 @@
 import Image from 'next/image';
 import { getAllArtIds, getArt } from '@/utils';
+import { BaseLayout } from '@/components';
+import { Container } from '@hyunwlee/ui';
 
 const Gallery = ({ artData }: { artData: Art }) => {
   return (
     <>
-      {artData.name}
-      <Image
-        src={artData.images.gallery}
-        width={artData.sizes.gallery.width}
-        height={artData.sizes.gallery.height}
-        alt={artData.description}
-      />
+      <BaseLayout>
+        <Container>
+          {artData.name}
+          <Image
+            src={artData.images.gallery}
+            width={artData.sizes.gallery.width}
+            height={artData.sizes.gallery.height}
+            alt={artData.description}
+          />
+        </Container>
+        <footer>
+          
+        </footer>
+      </BaseLayout>
     </>
   );
 };

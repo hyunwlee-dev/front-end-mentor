@@ -9,11 +9,9 @@ const Logo: React.FC<IProps> = ({ className }) => {
   return (
     <div className={className}>
       <Link href="/">
-        <a>
-          <Image src="/shared/logo.svg" width={170} height={50} alt="galleria logo" />
-        </a>
+        <Image src="/shared/logo.svg" width={170} height={50} alt="galleria logo" />
       </Link>
-      <button className="text-xs font-normal tracking-widest text-dark-gray uppercase">start slideshow</button>
+      <button className="text-sm font-bold tracking-widest text-dark-gray uppercase">start slideshow</button>
     </div>
   );
 };
