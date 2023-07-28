@@ -1,5 +1,5 @@
 import { sayHello } from '@hyunwlee/lib'
-import { A11yHidden, Button, Container, Input, Label } from '@hyunwlee/ui'
+import { A11yHidden, Button, Container, Input, Label, ProgressBar } from '@hyunwlee/ui'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -23,6 +23,7 @@ export default function Home() {
         <Button>{"I'm Button from ui"}</Button>
         <Label htmlFor='hi'>{"I'm Label from ui"}</Label>
         <Input id='hi' type="text" value="I'm Input from ui (read only)" readOnly style={{textAlign: 'center'}}></Input>
+        <ProgressBar className={styles.progressBar} completed={42} isVisibleAmount/>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
