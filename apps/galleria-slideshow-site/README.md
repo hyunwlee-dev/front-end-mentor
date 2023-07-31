@@ -109,6 +109,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Acknowledgments
 
+로딩방식을 처리하고 싶어서 일부러 비동기 통신에 setTimeout을 사용하여 delay를 길게 처리하였다. 하지만 SSG 방식인 프로젝트로서 build된 시점에서 미리 렌더링 되므로 추가적인 데이터 로딩일 필요없었기 때문에 suspense가 필요 없게되었다.
+
 This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
 **Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
