@@ -10,7 +10,6 @@ const useMediaQuery = (width: number) => {
   useEffect(() => {
     const media = window.matchMedia(`(max-width: ${width}px)`);
     media.addEventListener('change', updateTarget);
-    console.log('helllo world!!!!!');
     if (media.matches) setTargetReached(true);
     return () => media.removeEventListener('change', updateTarget);
   }, []);
