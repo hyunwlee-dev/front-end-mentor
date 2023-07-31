@@ -2,7 +2,6 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-<<<<<<< HEAD
     "module": "ESNext",
     "moduleResolution": "node",
     "target": "ESNext",
@@ -17,20 +16,3 @@
   "exclude": ["**/node_modules", "**/.*/", "./dist", "./coverage"],
   "include": ["**/*.ts", "**/*.js", "**/.cjs", "**/*.mjs", "**/*.json"]
 }
-=======
-    "baseUrl": "./src",
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "jsx": "react-jsx",
-    "noEmit": false,
-    "incremental": true
-  },
-  "exclude": ["**/node_modules", "**/.*/", "dist", "build"],
-  "include": ["./src/"]
-}
-<<<<<<< .merge_file_grH1gZ
-=======
-
->>>>>>> apps/todo-app
->>>>>>> .merge_file_xEP9ps
