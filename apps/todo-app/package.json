@@ -1,0 +1,43 @@
+{
+  "name": "@hyunwlee/todo-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "yarn dlx serve ./build",
+    "lint": "next lint",
+    "lint:fix": "eslint --fix --ext .ts,.tsx ./src",
+    "prettier:fix": "prettier ./src --write",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "deploy": "next build && aws s3 sync build s3://s3-deploy-cicd-frontendmentor-todo-app --delete"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix",
+      "npm run prettier:fix"
+    ]
+  },
+  "dependencies": {
+    "@hyunwlee/ui": "workspace:^",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@types/node": "18.16.1",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.1",
+    "include-media": "^2.0.0",
+    "next": "13.3.1",
+    "react": "18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.5",
+    "sass": "^1.62.1",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.1.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2"
+  }
+}

@@ -1,0 +1,45 @@
+@import "include-media/dist/include-media";
+
+$breakpoints: (
+  mobile: 568px,
+  tablet: 767px,
+  desktop: 992px,
+);
+
+.light {
+  --theme-white-color: #ffffff;
+  --theme-gray-color: #d1d2da;
+  --theme-light-gray-color: #e3e4f1;
+  --theme-primary-color: #3a7cfd;
+  --theme-secondary-color: #9495a5;
+  --theme-natural-color: #494c6b;
+  --theme-background-color: #fafafa;
+  --theme-background-image: url("/images/bg-mobile-light.jpg");
+  --theme-input-text-color: #393a4b;
+  --theme-gradient-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  --theme-highlight-color: var(--theme-natural-color);
+  --theme-box-color: var(--theme-white-color);
+  --theme-box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  @include media(">desktop") {
+    --theme-background-image: url("/images/bg-desktop-light.jpg");
+  }
+}
+
+.dark {
+  --theme-white-color: #ffffff;
+  --theme-gray-color: #4d5067;
+  --theme-light-gray-color: #393a4b;
+  --theme-primary-color: #3a7cfd;
+  --theme-secondary-color: #5b5e7e;
+  --theme-natural-color: #c8cbe7;
+  --theme-background-color: #171823;
+  --theme-background-image: url("/images/bg-mobile-dark.jpg");
+  --theme-input-text-color: var(--theme-natural-color);
+  --theme-gradient-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  --theme-highlight-color: #e3e4f1;
+  --theme-box-color: #25273d;
+  --theme-box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  @include media(">desktop") {
+    --theme-background-image: url("/images/bg-desktop-dark.jpg");
+  }
+}

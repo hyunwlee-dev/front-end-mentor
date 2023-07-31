@@ -1,0 +1,15 @@
+@import '@/styles/utils';
+
+.themeButton {
+  display: flex;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  .themeIcon {
+    @include media('>desktop') {
+      height: 26px;
+      width: 26px;
+    }
+  }
+}
