@@ -10,6 +10,7 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@hyunwlee/hook": "workspace:^",
     "@hyunwlee/lib": "workspace:^",
     "@hyunwlee/ui": "workspace:^",
     "@types/node": "20.4.2",
