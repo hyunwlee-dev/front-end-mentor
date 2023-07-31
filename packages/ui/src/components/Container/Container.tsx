@@ -1,7 +1,7 @@
 import { PolymorphicProps, PolymorphicRef } from '@hyunwlee/type';
-import { forwardRef } from 'react';
+import * as React from 'react';
 
-type ContainerProps<T extends React.ElementType> = PolymorphicProps<
+type ContainerProps<T extends React.ElementType = 'div'> = PolymorphicProps<
   T,
   {
     className?: string;
@@ -12,7 +12,7 @@ type ContainerProps<T extends React.ElementType> = PolymorphicProps<
 type ContainerComponent = <C extends React.ElementType = 'div'>(props: ContainerProps<C>) => React.ReactElement | null;
 
 // @ts-ignore
-const Container: ContainerComponent = forwardRef(
+const Container: ContainerComponent = React.forwardRef(
   <T extends React.ElementType>(
     { as, className = '', children, ...restProps }: ContainerProps<T>,
     ref: PolymorphicRef<T>['ref']
