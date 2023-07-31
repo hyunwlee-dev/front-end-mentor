@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['@hyunwlee/ui'],
+  transpilePackages: ['@hyunwlee/hook', '@hyunwlee/ui'],
 }
 
 module.exports = nextConfig

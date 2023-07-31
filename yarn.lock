@@ -99,6 +99,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyunwlee/example-app@workspace:apps/example-app"
   dependencies:
+    "@hyunwlee/hook": "workspace:^"
     "@hyunwlee/lib": "workspace:^"
     "@hyunwlee/ui": "workspace:^"
     "@types/node": 20.4.2
@@ -135,7 +136,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hyunwlee/hook@workspace:packages/hook":
+"@hyunwlee/hook@workspace:^, @hyunwlee/hook@workspace:packages/hook":
   version: 0.0.0-use.local
   resolution: "@hyunwlee/hook@workspace:packages/hook"
   dependencies:
