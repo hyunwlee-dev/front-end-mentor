@@ -11,6 +11,7 @@
     "tailwind:watch": "yarn run tailwind:compile -- --watch"
   },
   "dependencies": {
+    "@hyunwlee/hook": "workspace:^",
     "@hyunwlee/ui": "workspace:^",
     "@types/node": "20.4.4",
     "@types/react": "18.2.15",

@@ -8,7 +8,7 @@ const useMediaQuery = (width: number) => {
   }, []);
 
   useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${width}px)`);
+    const media = window.matchMedia(`(min-width: ${width}px)`);
     media.addEventListener('change', updateTarget);
     if (media.matches) setTargetReached(true);
     return () => media.removeEventListener('change', updateTarget);
