@@ -1,9 +1,9 @@
-import { getAllArtIds, getArt } from '@/utils';
-import { BaseLayout } from '@/components';
 import * as React from 'react';
-import { GalleryContainer } from '@/containers/GalleryContainer';
+import { BaseLayout } from '@/components';
 import { Footer } from '@/components/gallery';
+import { GalleryContainer } from '@/containers/GalleryContainer';
 import data from '@/db/data.json';
+import { getAllArtIds, getArt } from '@/utils';
 
 const Gallery = ({ artData }: { artData: IArtData }) => {
   const galleriaListSize = data.length;

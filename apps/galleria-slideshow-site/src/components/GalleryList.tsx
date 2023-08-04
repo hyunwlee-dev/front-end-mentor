@@ -1,6 +1,6 @@
-import React, { HTMLAttributes } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import React, { HTMLAttributes } from 'react';
 
 interface IProps extends HTMLAttributes<HTMLUListElement> {
   artList: Art[];

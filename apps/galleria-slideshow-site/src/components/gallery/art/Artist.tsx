@@ -1,6 +1,6 @@
-import React, { HTMLAttributes } from 'react';
-import Image from 'next/image';
 import { useMediaQuery } from '@hyunwlee/hook';
+import Image from 'next/image';
+import React, { HTMLAttributes } from 'react';
 import { MediaQuery } from '@/types/mediaQuery';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {

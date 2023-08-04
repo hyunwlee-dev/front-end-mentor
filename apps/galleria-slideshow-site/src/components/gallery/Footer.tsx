@@ -1,6 +1,6 @@
-import React, { HTMLAttributes } from 'react';
-import Image from 'next/image';
 import { Button, ProgressBar } from '@hyunwlee/ui';
+import Image from 'next/image';
+import React, { HTMLAttributes } from 'react';
 
 interface IProps extends HTMLAttributes<HTMLElement> {
   className?: string;
