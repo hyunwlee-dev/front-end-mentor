@@ -6,6 +6,7 @@ module.exports = {
       mobile: '568px',
       tablet: '767px',
       desktop: '992px',
+      'large-desktop': '1200px',
     },
     extend: {
       fontFamily: {

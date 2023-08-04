@@ -1,19 +1,23 @@
 import React, { HTMLAttributes } from 'react';
 import Image from 'next/image';
+import { useMediaQuery } from '@hyunwlee/hook';
+import { MediaQuery } from '@/types/mediaQuery';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
+  className?: string;
   artData: IArtData;
 }
-const Artist: React.FC<IProps> = ({ artData }) => {
+const Artist: React.FC<IProps> = ({ className, artData }) => {
+  const tabletReached = useMediaQuery(MediaQuery.TABLET);
   return (
-    <article className="absolute -bottom-32">
+    <div className={className}>
       <Image
         src={artData.artist.image}
-        width={artData.sizes.artist.width}
-        height={artData.sizes.artist.height}
+        width={!tabletReached ? 64 : artData.sizes.artist.width}
+        height={!tabletReached ? 64 : artData.sizes.artist.height}
         alt={`${artData.name} image`}
       />
-    </article>
+    </div>
   );
 };
 

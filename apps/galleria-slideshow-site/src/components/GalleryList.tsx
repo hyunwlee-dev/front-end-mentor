@@ -7,7 +7,7 @@ interface IProps extends HTMLAttributes<HTMLUListElement> {
 }
 const GalleryList: React.FC<IProps> = ({ artList }) => {
   return (
-    <ul className="p-10 desktop:pt-10 desktop:p-0 columns-1 mobile:columns-2 tablet:columns-3 desktop:columns-4 cursor-pointer">
+    <ul className="columns-1 mobile:columns-2 tablet:columns-3 desktop:columns-4 cursor-pointer">
       {artList?.map(art => (
         <Link href={`/gallery/${art.id}`} key={art.id}>
           <li className={'relative mb-3'}>

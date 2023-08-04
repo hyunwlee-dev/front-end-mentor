@@ -2,11 +2,16 @@ import { getAllArtIds, getArt } from '@/utils';
 import { BaseLayout } from '@/components';
 import * as React from 'react';
 import { GalleryContainer } from '@/containers/GalleryContainer';
+import { Footer } from '@/components/gallery';
+import data from '@/db/data.json';
 
 const Gallery = ({ artData }: { artData: IArtData }) => {
+  const galleriaListSize = data.length;
   return (
-    <BaseLayout>
-      <GalleryContainer artData={artData} />
+    <BaseLayout
+      footerSide={<Footer className="px-10 min-[1370px]:px-0" artData={artData} galleriaListSize={galleriaListSize} />}
+    >
+      {<GalleryContainer artData={artData} />}
     </BaseLayout>
   );
 };

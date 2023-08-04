@@ -5,11 +5,9 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
 }
 const ArtCompact: React.FC<IProps> = ({ artData }) => {
   return (
-    <article className="bg-transparent w-full max-w-3xl absolute bottom-10 left-0">
-      <div className="bg-white px-10 py-5 w-3/4 flex flex-col flex-nowrap gap-2">
-        <span className="px-5 text-3xl font-bold">{artData.name}</span>
-        <span className="px-5 text-dark-gray">{artData.artist.name}</span>
-      </div>
+    <article className="bg-white px-6 py-4 absolute bottom-16 left-0 right-24 tablet:right-auto tablet:bottom-auto tablet:left-1/3 tablet:px-10 tablet:py-5 tablet:top-0 large-desktop:left-1/2 flex flex-col">
+      <span className="text-2xl font-bold tablet:text-6xl">{artData.name}</span>
+      <span className="text-dark-gray pt-2 tablet:py-5">{artData.artist.name}</span>
     </article>
   );
 };

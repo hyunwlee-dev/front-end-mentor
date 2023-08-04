@@ -1,17 +1,19 @@
-import React, { HTMLAttributes } from 'react';
-import { Header } from './Header';
-import { Logo } from './Logo';
+import React, { HTMLAttributes, ReactNode } from 'react';
 import { Container } from '@hyunwlee/ui';
+import { Header, Logo } from '@/components';
 
-interface IProps extends HTMLAttributes<HTMLDivElement> {}
+interface IProps extends HTMLAttributes<HTMLDivElement> {
+  footerSide?: ReactNode;
+}
 
-const BaseLayout: React.FC<IProps> = ({ children }) => {
+const BaseLayout: React.FC<IProps> = ({ children, footerSide }) => {
   return (
-    <Container className="desktop:w-3/4 desktop:my-0 desktop:mx-auto ">
-      <Header className="border-b-2 border-solid border-b-med-gray">
-        <Logo className="p-10 flex flex-row, flex-nowrap justify-between" />
+    <Container className="min-[1370px]:px-32 flex flex-col flex-nowrap large-desktop:h-screen">
+      <Header className="px-10 py-5 border-b-med-gray border-solid border-b-2">
+        <Logo className="flex justify-between" />
       </Header>
-      <main>{children}</main>
+      <main className="flex-auto p-10">{children}</main>
+      <footer>{footerSide}</footer>
     </Container>
   );
 };
