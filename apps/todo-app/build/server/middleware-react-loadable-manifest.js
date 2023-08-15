@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST={"../components/TodoList/index.tsx -> react-beautiful-dnd":{"id":"../components/TodoList/index.tsx -> react-beautiful-dnd","files":["static/chunks/_yarn___virtual___react-beautiful-dnd-virtual-ef7587c26b_0_cache_react-beautiful-dnd-npm-13_1-bf5e4a.js"]}}

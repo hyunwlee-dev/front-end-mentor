@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST={"../components/TodoList/index.tsx -> react-beautiful-dnd":{id:7259,files:["static/chunks/880a2b94.dea79481ec48b4fe.js","static/chunks/597.7acb39aedee5f689.js"]}};
