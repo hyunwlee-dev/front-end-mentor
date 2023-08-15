@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React, { HTMLAttributes } from 'react';
 import { Modal } from '@/components';
 import { Art, Description } from '@/components/gallery';
+
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   artData: IArtData;
 }

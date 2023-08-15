@@ -6,8 +6,10 @@ interface IArtIds {
   };
 }
 
+const _convert2Id = (name: string) => name.toLowerCase().replaceAll(' ', '-');
+
 const getAllArtData = (): Promise<Art[]> => {
-  const result = data.map(art => ({ id: art.name.toLowerCase().replaceAll(' ', '-'), ...art }));
+  const result = data.map(art => ({ id: _convert2Id(art.name), ...art }));
   return new Promise(function (resolve) {
     setTimeout(() => resolve(result), 500);
   });
@@ -17,7 +19,7 @@ const getAllArtIds = (): Promise<IArtIds[]> => {
   const result = data.map(art => {
     return {
       params: {
-        id: art.name.toLowerCase().replaceAll(' ', '-'),
+        id: _convert2Id(art.name),
       },
     };
   });
@@ -27,9 +29,7 @@ const getAllArtIds = (): Promise<IArtIds[]> => {
 };
 
 const getArt = async (id: string) => {
-  const art = data
-    .map((item, index) => ({ ...item, index }))
-    .filter(item => item.name.toLowerCase().replaceAll(' ', '-') === id);
+  const art = data.map((item, index) => ({ ...item, index })).filter(item => _convert2Id(item.name) === id);
   return new Promise(function (resolve) {
     setTimeout(() => resolve(art[0]), 500);
   });
@@ -46,4 +46,6 @@ const sortMansonryArray = (array: Art[], col: number) => {
   return masonryArry;
 };
 
-export { getAllArtData, getAllArtIds, getArt, sortMansonryArray };
+const artTable = data.map(art => _convert2Id(art.name));
+
+export { getAllArtData, getAllArtIds, getArt, sortMansonryArray, artTable };

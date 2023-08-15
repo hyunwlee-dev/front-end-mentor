@@ -1,1 +1,1 @@
-export { getAllArtData, getAllArtIds, getArt, sortMansonryArray } from './arts';
+export { getAllArtData, getAllArtIds, getArt, sortMansonryArray, artTable } from './arts';

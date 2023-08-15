@@ -1,34 +1,43 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills.js"
+    "static/chunks/polyfills-c67a75d1b6f99dc8.js"
   ],
-  "devFiles": [
-    "static/chunks/react-refresh.js"
-  ],
-  "ampDevFiles": [
-    "static/chunks/webpack.js",
-    "static/chunks/amp.js"
-  ],
+  "devFiles": [],
+  "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/development/_buildManifest.js",
-    "static/development/_ssgManifest.js"
+    "static/TVSape_Tbumv4Gi7-gDjq/_buildManifest.js",
+    "static/TVSape_Tbumv4Gi7-gDjq/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
+    "/": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-aa1a94cc9073d652.js",
+      "static/chunks/main-66fc5c46d818360f.js",
+      "static/chunks/784-58738bdb5bfc331f.js",
+      "static/chunks/938-35e1ba9184e45a65.js",
+      "static/chunks/pages/index-c55fa46e02194648.js"
+    ],
     "/_app": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_app.js"
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-aa1a94cc9073d652.js",
+      "static/chunks/main-66fc5c46d818360f.js",
+      "static/css/d94ef51d1b6958b4.css",
+      "static/chunks/pages/_app-ffe3e770da35183b.js"
     ],
     "/_error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_error.js"
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-aa1a94cc9073d652.js",
+      "static/chunks/main-66fc5c46d818360f.js",
+      "static/chunks/pages/_error-82a72ccd83aac3c0.js"
     ],
     "/gallery/[id]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/gallery/[id].js"
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-aa1a94cc9073d652.js",
+      "static/chunks/main-66fc5c46d818360f.js",
+      "static/chunks/784-58738bdb5bfc331f.js",
+      "static/chunks/938-35e1ba9184e45a65.js",
+      "static/chunks/pages/gallery/[id]-c98d2bb898b294bd.js"
     ]
   },
   "ampFirstPages": []
