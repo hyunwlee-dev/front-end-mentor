@@ -10,7 +10,7 @@ export default function Home({ artList }: { artList: Art[] }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const data = await getAllArtData();
     const artList = sortMansonryArray(data, 4);
