@@ -1,0 +1,13 @@
+@import "@/styles/utils";
+
+.removeButton {
+  display: flex;
+  background: transparent;
+  margin-left: 12px;
+  .removeIcon {
+    @include media(">desktop") {
+        width: 16px;
+        height: 16px;
+    }
+  }
+}

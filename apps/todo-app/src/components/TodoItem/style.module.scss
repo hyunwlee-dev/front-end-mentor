@@ -1,0 +1,31 @@
+@import "@/styles/utils";
+.todoItem {
+  display: flex;
+  flex-flow: row nowraps;
+  align-items: center;
+  padding: 16px 20px;
+  word-break: break-word;
+  outline: none;
+  background: var(--theme-box-color);
+  cursor: pointer;
+
+  &.completed {
+    .contents {
+      color: var(--theme-gray-color);
+      text-decoration-line: line-through;
+    }
+  }
+
+  .contents {
+    flex: 1;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.17px;
+    margin-left: 12px;
+    @include media(">desktop") {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 0 14px;
+    }
+  }
+}
