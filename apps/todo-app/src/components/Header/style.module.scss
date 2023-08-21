@@ -1,8 +1,8 @@
-@import "@/styles/utils";
+@import '@/styles/utils';
 .header {
   padding: 48px 0 40px;
 
-  @include media(">desktop") {
+  @include media('>desktop') {
     padding-top: 70px;
   }
   .container {

@@ -3,6 +3,8 @@ export enum Theme {
   DARK,
 }
 
+/* eslint-disable  @typescript-eslint/no-namespace */
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export namespace Theme {
   export function toString(theme: Theme): string {
     return Theme[theme];

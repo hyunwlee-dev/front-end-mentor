@@ -1,5 +1,5 @@
-import DefaultHead from "@/components/DefaultHead";
-import { Html, Head, Main, NextScript } from "next/document";
+import { Html, Head, Main, NextScript } from 'next/document';
+import DefaultHead from '@/components/DefaultHead';
 
 export default function Document() {
   return (

@@ -5,10 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "yarn dlx serve ./build",
     "lint": "next lint",
-    "lint:fix": "eslint --fix --ext .ts,.tsx ./src",
-    "prettier:fix": "prettier ./src --write"
+    "deploy": "next build && aws s3 sync build s3://s3-deploy-cicd-frontendmentor-todo-app --delete"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -21,8 +20,12 @@
     "@types/node": "18.16.1",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "include-media": "^2.0.0",
     "next": "13.3.1",
     "react": "18.2.0",

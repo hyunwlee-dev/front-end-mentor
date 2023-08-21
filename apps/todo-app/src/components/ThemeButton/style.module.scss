@@ -1,4 +1,4 @@
-@import "@/styles/utils";
+@import '@/styles/utils';
 
 .themeButton {
   display: flex;
@@ -7,7 +7,7 @@
   cursor: pointer;
 
   .themeIcon {
-    @include media(">desktop") {
+    @include media('>desktop') {
       height: 26px;
       width: 26px;
     }

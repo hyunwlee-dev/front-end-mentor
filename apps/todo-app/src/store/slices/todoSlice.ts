@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Todo {
   id: number;
@@ -24,7 +24,7 @@ interface IUpdateTodoPayload {
 }
 
 const todoSlice = createSlice({
-  name: "todo",
+  name: 'todo',
   initialState: [] as ITodoList,
   reducers: {
     initTodoList: (_, action) => {
@@ -40,18 +40,18 @@ const todoSlice = createSlice({
           completed,
         },
       ];
-      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      localStorage.setItem('todos', JSON.stringify(updatedTodos));
       return updatedTodos;
     },
     removeTodo: (state, action: PayloadAction<IRemoveTodoPayload>) => {
       const { id } = action.payload;
       const updatedTodos = state.filter(({ id: _id }) => _id !== id);
-      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      localStorage.setItem('todos', JSON.stringify(updatedTodos));
       return updatedTodos;
     },
     updateTodo: (state, action: PayloadAction<IUpdateTodoPayload>) => {
       const { id, text, completed } = action.payload;
-      const updatedTodos = state.map((todo) => {
+      const updatedTodos = state.map(todo => {
         if (todo.id === id) {
           return {
             id,
@@ -61,27 +61,20 @@ const todoSlice = createSlice({
         }
         return todo;
       });
-      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      localStorage.setItem('todos', JSON.stringify(updatedTodos));
       return updatedTodos;
     },
     updateTodoList: (state, action: PayloadAction<ITodoList>) => {
       const updatedTodos = action.payload;
-      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      localStorage.setItem('todos', JSON.stringify(updatedTodos));
       return updatedTodos;
     },
     clearTodo: () => {
-      localStorage.setItem("todos", JSON.stringify([]));
+      localStorage.setItem('todos', JSON.stringify([]));
       return [];
     },
   },
 });
 
 export default todoSlice;
-export const {
-  initTodoList,
-  addTodo,
-  removeTodo,
-  updateTodo,
-  updateTodoList,
-  clearTodo,
-} = todoSlice.actions;
+export const { initTodoList, addTodo, removeTodo, updateTodo, updateTodoList, clearTodo } = todoSlice.actions;

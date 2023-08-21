@@ -1,4 +1,4 @@
-@import "include-media/dist/include-media";
+@import 'include-media/dist/include-media';
 
 $breakpoints: (
   mobile: 568px,
@@ -14,14 +14,14 @@ $breakpoints: (
   --theme-secondary-color: #9495a5;
   --theme-natural-color: #494c6b;
   --theme-background-color: #fafafa;
-  --theme-background-image: url("/images/bg-mobile-light.jpg");
+  --theme-background-image: url('/images/bg-mobile-light.jpg');
   --theme-input-text-color: #393a4b;
   --theme-gradient-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   --theme-highlight-color: var(--theme-natural-color);
   --theme-box-color: var(--theme-white-color);
   --theme-box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
-  @include media(">desktop") {
-    --theme-background-image: url("/images/bg-desktop-light.jpg");
+  @include media('>desktop') {
+    --theme-background-image: url('/images/bg-desktop-light.jpg');
   }
 }
 
@@ -33,13 +33,13 @@ $breakpoints: (
   --theme-secondary-color: #5b5e7e;
   --theme-natural-color: #c8cbe7;
   --theme-background-color: #171823;
-  --theme-background-image: url("/images/bg-mobile-dark.jpg");
+  --theme-background-image: url('/images/bg-mobile-dark.jpg');
   --theme-input-text-color: var(--theme-natural-color);
   --theme-gradient-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   --theme-highlight-color: #e3e4f1;
   --theme-box-color: #25273d;
   --theme-box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
-  @include media(">desktop") {
-    --theme-background-image: url("/images/bg-desktop-dark.jpg");
+  @include media('>desktop') {
+    --theme-background-image: url('/images/bg-desktop-dark.jpg');
   }
 }

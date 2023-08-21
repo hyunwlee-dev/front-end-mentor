@@ -1,5 +1,5 @@
-import { InputHTMLAttributes } from "react";
-import styles from "./style.module.scss";
+import { InputHTMLAttributes } from 'react';
+import styles from './style.module.scss';
 
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {}
 

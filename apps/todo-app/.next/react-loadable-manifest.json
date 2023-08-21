@@ -1,8 +1,9 @@
 {
   "../components/TodoList/index.tsx -> react-beautiful-dnd": {
-    "id": "../components/TodoList/index.tsx -> react-beautiful-dnd",
+    "id": 7259,
     "files": [
-      "static/chunks/_yarn___virtual___react-beautiful-dnd-virtual-ef7587c26b_0_cache_react-beautiful-dnd-npm-13_1-bf5e4a.js"
+      "static/chunks/880a2b94.dea79481ec48b4fe.js",
+      "static/chunks/597.7acb39aedee5f689.js"
     ]
   }
 }

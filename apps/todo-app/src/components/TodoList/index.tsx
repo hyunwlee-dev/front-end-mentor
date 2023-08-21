@@ -1,26 +1,22 @@
-import { HTMLAttributes } from "react";
-import styles from "./style.module.scss";
-import dynamic from "next/dynamic";
-import {
-  DragDropContextProps,
-  DraggableProps,
-  DroppableProps,
-  DropResult,
-} from "react-beautiful-dnd";
+import dynamic from 'next/dynamic';
+import { HTMLAttributes } from 'react';
+import { DragDropContextProps, DraggableProps, DroppableProps, DropResult } from 'react-beautiful-dnd';
 
-import TodoItem from "../TodoItem";
-import Button from "../Button";
+import Button from '../Button';
+import TodoItem from '../TodoItem';
+import styles from './style.module.scss';
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 const DragDropContext = dynamic<DragDropContextProps>(
   () =>
-    import("react-beautiful-dnd").then((mod) => {
+    import('react-beautiful-dnd').then(mod => {
       return mod.DragDropContext;
     }) as any,
   { ssr: false }
 );
 const Droppable = dynamic<DroppableProps>(
   () =>
-    import("react-beautiful-dnd").then((mod) => {
+    import('react-beautiful-dnd').then(mod => {
       return mod.Droppable;
     }) as any,
   { ssr: false }
@@ -28,7 +24,7 @@ const Droppable = dynamic<DroppableProps>(
 
 const Draggable = dynamic<DraggableProps>(
   () =>
-    import("react-beautiful-dnd").then((mod) => {
+    import('react-beautiful-dnd').then(mod => {
       return mod.Draggable;
     }) as any,
   { ssr: false }
@@ -43,7 +39,7 @@ const TodoList: React.FC<IProps> = ({
   onClear,
   onCompleted,
   onReorder,
-  className = "",
+  className = '',
   ...restProps
 }) => {
   const combineClassName = `${styles.todoListContainer} ${className}`;
@@ -52,39 +48,31 @@ const TodoList: React.FC<IProps> = ({
   };
   const checkActiveItemCount = () => {
     const count = todos.filter(({ completed }) => !completed).length;
-    if (count === 0) return `No left`;
-    if (count === 1) return `1 item left`;
+    if (count === 0) {
+      return `No left`;
+    }
+    if (count === 1) {
+      return `1 item left`;
+    }
     return `${count} items left`;
   };
 
   return (
     <div className={combineClassName} {...restProps}>
       <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId={"todo-container"}>
-          {(provided) => (
-            <div
-              className={styles.todoItemContainer}
-              ref={provided.innerRef}
-              {...provided.droppableProps}
-            >
+        <Droppable droppableId={'todo-container'}>
+          {provided => (
+            <div className={styles.todoItemContainer} ref={provided.innerRef} {...provided.droppableProps}>
               {todos.map((todo, index) => (
-                <Draggable
-                  key={`${todo.id}`}
-                  draggableId={`${todo.id}`}
-                  index={index}
-                >
-                  {(provided) => (
+                <Draggable key={`${todo.id}`} draggableId={`${todo.id}`} index={index}>
+                  {provided => (
                     <li
                       className={styles.todoItem}
                       ref={provided.innerRef}
                       {...provided.dragHandleProps}
                       {...provided.draggableProps}
                     >
-                      <TodoItem
-                        todo={todo}
-                        onCheck={onCheck}
-                        onRemove={onRemove}
-                      />
+                      <TodoItem todo={todo} onCheck={onCheck} onRemove={onRemove} />
                     </li>
                   )}
                 </Draggable>
