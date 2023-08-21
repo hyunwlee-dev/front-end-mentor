@@ -1,2 +1,36 @@
-# front-end-mentor
-실제 프로젝트를 구축하여 front-end 기술을 향상시킵니다. 전문적인 디자인 작업을 하면서 실제 HTML, CSS 및 JavaScript 문제를 해결합니다.
+# Frontend Mentor - Multi-step form solution
+
+![multi step form](./apps/multi-step-form/public/desktop-preview.jpg)
+
+### 🚀 Execute 
+```
+yarn workspace @hyunwlee/multi-step-form run dev
+```
+
+### 🔗 Links
+
+- Solution URL: [Click here](https://github.com/hyunwlee-dev/front-end-mentor/tree/apps/multi-step-form)
+- Live Site URL: [Click here](http://s3-deploy-cicd-frontendmentor-multi-step-form.s3-website.ap-northeast-2.amazonaws.com/)
+
+### 🛠️ Built with
+
+- semantic HTML5 markup
+- nextJS
+- styled-components
+- redux-tool-kit
+
+### 🎨 Features
+
+- Complete each step of the sequence
+- Go back to a previous step to update their selections
+- See a summary of their selections on the final step and confirm their order
+- View the optimal layout for the interface depending on their device's screen size
+
+### 📜 What I learnt?
+
+- redux-tool-kit, conditional rendering with step state
+
+## ✒️Author
+
+- hyunwlee
+- Frontend Mentor - [@hyunwlee](https://www.frontendmentor.io/profile/hyunwlee)
