@@ -100,6 +100,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@emotion/is-prop-valid", [\
+        ["npm:0.8.8", {\
+          "packageLocation": "./.yarn/cache/@emotion-is-prop-valid-npm-0.8.8-261a0f2426-bb7ec6d48c.zip/node_modules/@emotion/is-prop-valid/",\
+          "packageDependencies": [\
+            ["@emotion/is-prop-valid", "npm:0.8.8"],\
+            ["@emotion/memoize", "npm:0.7.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@emotion/memoize", [\
+        ["npm:0.7.4", {\
+          "packageLocation": "./.yarn/cache/@emotion-memoize-npm-0.7.4-5648cf11b8-4e3920d4ec.zip/node_modules/@emotion/memoize/",\
+          "packageDependencies": [\
+            ["@emotion/memoize", "npm:0.7.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@eslint-community/eslint-utils", [\
         ["npm:4.4.0", {\
           "packageLocation": "./.yarn/cache/@eslint-community-eslint-utils-npm-4.4.0-d1791bd5a3-cdfe3ae42b.zip/node_modules/@eslint-community/eslint-utils/",\
@@ -250,6 +269,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:39634b82ad281aa2b96ca7103ce9d91bb0e2f400105ef60a7e7794e8848091ce3a39b7b24672e4b89aba9d4faa1250ad096b9801dd5b4d415776acf6f706f61a#npm:2.28.0"],\
             ["eslint-plugin-react", "virtual:226a8edff868a04f0d6a4c6643443b7273326f5a012cdf3eb0cc9ea9585bc75231c2b4deec96a4b45eefb299346d052b59873a85ffdf4e6d2a22a1ef83861277#npm:7.33.1"],\
             ["eslint-plugin-react-hooks", "virtual:39634b82ad281aa2b96ca7103ce9d91bb0e2f400105ef60a7e7794e8848091ce3a39b7b24672e4b89aba9d4faa1250ad096b9801dd5b4d415776acf6f706f61a#npm:4.6.0"],\
+            ["framer-motion", "virtual:39634b82ad281aa2b96ca7103ce9d91bb0e2f400105ef60a7e7794e8848091ce3a39b7b24672e4b89aba9d4faa1250ad096b9801dd5b4d415776acf6f706f61a#npm:10.16.1"],\
             ["next", "virtual:39634b82ad281aa2b96ca7103ce9d91bb0e2f400105ef60a7e7794e8848091ce3a39b7b24672e4b89aba9d4faa1250ad096b9801dd5b4d415776acf6f706f61a#npm:13.4.4"],\
             ["postcss", "npm:8.4.27"],\
             ["postcss-import", "virtual:1cb35d024e1bb70df17d582b2dc13653cf6b904d97112d81ada3a3f6e8a30df43cee4c1934cef18cd04a6397322f81ba87bbc4a18d88e2c636b19c04d0f9f6ba#npm:15.1.0"],\
@@ -3084,6 +3104,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/fraction.js-npm-4.2.0-28efe4afc7-8c76a6e21d.zip/node_modules/fraction.js/",\
           "packageDependencies": [\
             ["fraction.js", "npm:4.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["framer-motion", [\
+        ["npm:10.16.1", {\
+          "packageLocation": "./.yarn/cache/framer-motion-npm-10.16.1-73639ed293-cce2497599.zip/node_modules/framer-motion/",\
+          "packageDependencies": [\
+            ["framer-motion", "npm:10.16.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:39634b82ad281aa2b96ca7103ce9d91bb0e2f400105ef60a7e7794e8848091ce3a39b7b24672e4b89aba9d4faa1250ad096b9801dd5b4d415776acf6f706f61a#npm:10.16.1", {\
+          "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-2f67b05f03/0/cache/framer-motion-npm-10.16.1-73639ed293-cce2497599.zip/node_modules/framer-motion/",\
+          "packageDependencies": [\
+            ["framer-motion", "virtual:39634b82ad281aa2b96ca7103ce9d91bb0e2f400105ef60a7e7794e8848091ce3a39b7b24672e4b89aba9d4faa1250ad096b9801dd5b4d415776acf6f706f61a#npm:10.16.1"],\
+            ["@emotion/is-prop-valid", "npm:0.8.8"],\
+            ["@types/react", "npm:18.2.15"],\
+            ["@types/react-dom", "npm:18.2.7"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:df81657f5c483e107708ed736510abec0d1b85ebc53a161309496052467c38d95f9625555d433dc78017cc70bc1bf56a4886550067dbfa77acc2902aca2dc264#npm:18.2.0"],\
+            ["tslib", "npm:2.6.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\

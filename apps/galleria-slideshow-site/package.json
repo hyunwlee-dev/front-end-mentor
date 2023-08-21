@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "yarn dlx serve ./build",
     "lint": "next lint",
     "tailwind:compile": "tailwindcss -i src/styles/tailwind.css -o public/assets/styles/main.css --postcss",
-    "tailwind:watch": "yarn run tailwind:compile -- --watch"
+    "tailwind:watch": "yarn run tailwind:compile -- --watch",
+    "deploy": "next build && aws s3 sync build s3://s3-deploy-cicd-frontendmentor-galleria-slideshow-site --delete"
   },
   "dependencies": {
     "@hyunwlee/hook": "workspace:^",
